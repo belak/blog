@@ -1,0 +1,10 @@
+languageCode = "en-us"
+title = "coded.io"
+theme = "after-dark"
+baseURL = "https://coded.io/"
+disqusShortname = "coded"
+SectionPagesMenu = "main"
+
+[params]
+  accent_color = "#81a2be"
+  powered_by   = false
