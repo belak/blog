@@ -8,7 +8,7 @@ ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 RUN mkdir /site
 WORKDIR /site
 
-RUN apk --no-cache add curl
+RUN apk --no-cache add --virtual curl
 
 # curl instead of ADD so we use the cache
 RUN curl -L https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_ARCHIVE} > /usr/local/${HUGO_BINARY}.tar.gz \
@@ -17,7 +17,7 @@ RUN curl -L https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${H
   && rm /usr/local/${HUGO_BINARY}.tar.gz
 
 # remove the metapackage we created earlier
-RUN apk del build-dependencies
+#RUN apk del build-dependencies
 
 # Add all our files
 ADD . /site
