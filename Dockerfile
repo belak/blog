@@ -7,6 +7,8 @@ ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 RUN mkdir /site
 WORKDIR /site
 
+RUN apk --no-cache add curl
+
 # curl instead of ADD so we use the cache
 RUN curl -L https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz > /usr/local/${HUGO_BINARY}.tar.gz \
   && tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
