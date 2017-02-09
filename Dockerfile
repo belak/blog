@@ -23,6 +23,6 @@ RUN curl -L https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${H
 ADD . /site
 
 # for if we run hugo server, as is the default cmd
-EXPOSE 1313:80
+EXPOSE 1313
 
 CMD hugo server --bind 0.0.0.0
