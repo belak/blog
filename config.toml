@@ -2,9 +2,21 @@ languageCode = "en-us"
 title = "coded.io"
 theme = "after-dark"
 baseURL = "https://coded.io/"
-disqusShortname = "coded"
+#disqusShortname = "coded"
 SectionPagesMenu = "main"
 
 [params]
   accent_color = "#81a2be"
   powered_by   = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Posts"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
