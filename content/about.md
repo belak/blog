@@ -7,13 +7,15 @@ date = "2017-02-10T02:08:34-08:00"
 ## Intro
 
 My name is Kaleb Elwert and I'm a full-time software developer focusing on
-backend and infrastructure code. Currently, I work at Bitbucket on anything from
-our SSH services to our billing infrastructure, and even a tiny bit of front-end
-work.
+backend and infrastructure code. Currently, I work at The Pokémon Company
+International on backend services.
 
 Thanks for stopping by my site. Feel free to check out my ramblings in this blog
 or take a look at some of my other projects below to see what I've been up to
 lately.
+
+Opinions expressed are solely my own and do not express the views or opinions of
+my employer.
 
 ## About this site
 
