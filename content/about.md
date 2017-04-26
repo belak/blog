@@ -32,6 +32,10 @@ lately.
   themes with a small amount of code. I also maintain one of the builder
   reference implementations. Mine is written in go and can be found
   [here](https://github.com/belak/base16-builder-go).
+- [prezto](https://github.com/sorin-ionescu/prezto) - A ZSH configuration
+  framework designed to provide a number of convenient modules with sane
+  defaults, aliases and more. I am one of the maintainers and have been focusing
+  on fixing and cleaning up old issues and pull requests.
 - [mopidy-gmusic](https://github.com/mopidy/mopidy-gmusic) - A plugin for mopidy
   which allows for browsing Google Music using the mpd protocol. My contribution
   rewrote a large portion of how responses were cached to make this usable for
