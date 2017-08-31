@@ -1,7 +1,9 @@
 +++
-title = "About Me"
+title = "About"
 description = ""
 date = "2017-02-10T02:08:34-08:00"
+menu = "main"
+toc = true
 +++
 
 ## Intro

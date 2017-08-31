@@ -5,6 +5,9 @@ baseURL = "https://coded.io/"
 #disqusShortname = "coded"
 SectionPagesMenu = "main"
 
+pygmentscodefences = true
+pygmentsuseclasses = true
+
 [params]
   accent_color = "#81a2be"
   powered_by   = false
