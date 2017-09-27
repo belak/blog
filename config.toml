@@ -10,7 +10,7 @@ pygmentsuseclasses = true
 
 [params]
   accent_color = "#81a2be"
-  powered_by   = false
+  powered_by   = true
 
 [menu]
   [[menu.main]]
