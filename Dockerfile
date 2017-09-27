@@ -3,7 +3,6 @@ MAINTAINER Kaleb Elwert <belak@coded.io>
 
 ENV HUGO_VERSION 0.29
 ENV HUGO_ARCHIVE hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 
 RUN mkdir /site
 WORKDIR /site
@@ -20,4 +19,4 @@ RUN mkdir /usr/local/hugo \
 # Add all our files
 ADD . /site
 
-CMD hugo build --baseURL "https://coded.io" --appendPort=false --enableGitInfo --destination /usr/share/nginx/html
+RUN hugo --baseURL "https://coded.io" --appendPort=false --enableGitInfo --destination=/usr/share/nginx/html
