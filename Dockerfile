@@ -7,7 +7,7 @@ ENV HUGO_ARCHIVE hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 RUN mkdir /site
 WORKDIR /site
 
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl git
 
 # curl instead of ADD so we use the cache
 RUN mkdir /usr/local/hugo \
