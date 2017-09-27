@@ -7,6 +7,8 @@ ENV HUGO_ARCHIVE hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 RUN mkdir /site
 WORKDIR /site
 
+RUN sed -i 's/#error_page  404/error_page  404/' /etc/nginx/conf.d/default.conf
+
 RUN apk --no-cache add curl git
 
 # curl instead of ADD so we use the cache
