@@ -1,4 +1,4 @@
-FROM alpine
+FROM nginx
 MAINTAINER Kaleb Elwert <belak@coded.io>
 
 ENV HUGO_VERSION 0.29
@@ -7,8 +7,6 @@ ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 
 RUN mkdir /site
 WORKDIR /site
-
-RUN apk --no-cache add curl
 
 # curl instead of ADD so we use the cache
 RUN mkdir /usr/local/hugo \
@@ -20,7 +18,4 @@ RUN mkdir /usr/local/hugo \
 # Add all our files
 ADD . /site
 
-# for if we run hugo server, as is the default cmd
-EXPOSE 1313
-
-CMD hugo server --bind 0.0.0.0 -b "https://coded.io/" --appendPort=false --enableGitInfo --disableLiveReload
+CMD hugo build --baseURL "https://coded.io" --appendPort=false --enableGitInfo --destination /usr/share/nginx/html
