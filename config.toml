@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "coded.io"
-theme = "after-dark"
+theme = "coded"
 baseURL = "https://coded.io/"
 #disqusShortname = "coded"
 SectionPagesMenu = "main"
