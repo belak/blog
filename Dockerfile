@@ -19,4 +19,4 @@ RUN mkdir /usr/local/hugo \
 # Add all our files
 ADD . /site
 
-RUN hugo --baseURL "https://coded.io" --appendPort=false --enableGitInfo --destination=/usr/share/nginx/html
+RUN hugo --baseURL "https://coded.io" --enableGitInfo --destination=/usr/share/nginx/html
