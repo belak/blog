@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:alpine
 MAINTAINER Kaleb Elwert <belak@coded.io>
 
 ENV HUGO_VERSION 0.29
@@ -7,6 +7,8 @@ ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
 
 RUN mkdir /site
 WORKDIR /site
+
+RUN apk --no-cache add curl
 
 # curl instead of ADD so we use the cache
 RUN mkdir /usr/local/hugo \
