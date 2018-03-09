@@ -1,25 +1,27 @@
 languageCode = "en-us"
 title = "coded.io"
-theme = "coded"
 baseURL = "https://coded.io/"
 #disqusShortname = "coded"
 SectionPagesMenu = "main"
 
-pygmentscodefences = true
-pygmentsuseclasses = true
-
-[params]
-  accent_color = "#81a2be"
-  powered_by   = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    weight = 1
-    identifier = "home"
-    url = "/"
-  [[menu.main]]
     name = "Posts"
-    weight = 2
+    weight = 1
     identifier = "post"
     url = "/post/"
+  [[menu.main]]
+    name = "Tags"
+    weight = 2
+    identifier = "tags"
+    url = "/tags/"
+
+[permalinks]
+  post = "/:year/:month/:title/"
+
+[taxonomies]
+  category = ""
+  tag = "tags"

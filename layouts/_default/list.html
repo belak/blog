@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ range where .Paginator.Pages "Section" "ne" "" }}
+    {{ partial "article-preview" . }}
+  {{ end }}
+
+  {{ partial "paginator" .Paginator }}
+{{ end }}

@@ -1,7 +1,6 @@
 +++
 title = "About"
 description = ""
-date = "2017-02-10T02:08:34-08:00"
 menu = "main"
 toc = true
 +++
@@ -18,8 +17,6 @@ lately.
 
 Opinions expressed are solely my own and do not express the views or opinions of
 my employer.
-
-## About this site
 
 ## Other projects
 
@@ -49,7 +46,7 @@ my employer.
 ## Made with
 
 This site was built using [hugo](https://gohugo.io) and a modified version of
-the [after-dark](https://github.com/comfusion/after-dark) theme.
+the theme from [BitCannon](http://bitcannon.net/).
 
 ## Contact me
 

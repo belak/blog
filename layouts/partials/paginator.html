@@ -1,0 +1,19 @@
+<div class="pagination">
+  {{ if .HasPrev }}
+    <div class="pull-left">
+      <a href="{{ .Prev.URL }}" class="chevron">&lsaquo;</a>
+      <a href="{{ .Prev.URL }}">Prev Page</a>
+    </div>
+  {{ end }}
+
+  <div style="position: absolute; left: 0; right: 0">
+    Page {{ .PageNumber }} of {{ .TotalPages }}
+  </div>
+
+  {{ if .HasNext }}
+    <div class="pull-right">
+      <a href="{{ .Next.URL }}">Next Page</a>
+      <a href="{{ .Next.URL }}" class="chevron">&rsaquo;</a>
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
+
+  <title>
+    {{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}
+  </title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chroma.css">
+</head>
+<body>
+  <!-- {{ . | jsonify }} -->
+  <header>
+    <a href="/">
+      Coded
+    </a>
+
+    <nav>
+      <ul>
+        {{ $currentNode := . }}
+
+        {{ range .Site.Menus.main }}
+          {{/* Seriously this is like lisp - I don't know how to make this better */}}
+          <a class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (and (ne $currentNode.Section "") (eq $currentNode.Section .Identifier)) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <div class="copyright">
+      Copyright &copy; 2018 <a href="/">Kaleb Elwert</a>
+    </div>
+  </footer>
+</body>
+</html>
+

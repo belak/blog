@@ -1,0 +1,21 @@
+<article>
+  <h1><a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a></h1>
+
+  {{ if gt .Date 0 }}
+    <time datetime="{{ .Date.Format "2006-01-02T15:04" }}">Posted {{ .Date.Format "02 January 2006" }}</time>
+  {{ end }}
+
+  <p>
+    {{ .Summary }}
+  </p>
+
+  {{ if .Params.tags }}
+    {{ range .Params.tags }}
+      <a href="/tags/{{ . }}">#{{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+  <p>
+    <a href="{{ .Permalink }}" class="continue-reading" title="{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}">Continue reading&hellip;</a>
+  </p>
+</article>
