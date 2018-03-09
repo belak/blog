@@ -13,6 +13,11 @@ body {
    * Noto Mono: Linux, Android
    */
   font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
+
+  /*
+   * Github Monospace Font
+   * font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+   */
   font-size: 13px;
 }
 
@@ -152,8 +157,7 @@ hr:after {
 /* Because of how floats work, we need to make sure there's content in the
 same element as a floated div to make sure we get the margins we expect. */
 .pagination:after,
-.post-navigation:after,
-.preview-navigation:after {
+.post-navigation:after {
   content: '.';
   visibility: hidden;
 }
