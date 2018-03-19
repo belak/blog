@@ -46,7 +46,9 @@ my employer.
 ## Made with
 
 This site was built using [hugo](https://gohugo.io) and a modified version of
-the theme from [BitCannon](http://bitcannon.net/).
+the theme from [BitCannon](http://bitcannon.net/). Penguin icon made by
+[Freepik](https://www.flaticon.com/authors/freepik) from
+[Flaticon](http://www.flaticon.com).
 
 ## Contact me
 
