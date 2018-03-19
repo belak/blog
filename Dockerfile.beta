@@ -21,4 +21,4 @@ RUN mkdir /usr/local/hugo \
 # Add all our files
 ADD . /site
 
-RUN hugo --baseURL "https://coded.io" --enableGitInfo --destination=/usr/share/nginx/html --buildDrafts
+RUN hugo --baseURL "https://beta-blog.coded.io" --enableGitInfo --destination=/usr/share/nginx/html --buildDrafts
