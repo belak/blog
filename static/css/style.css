@@ -21,6 +21,16 @@ body {
   font-size: 13px;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 /*
 ::-moz-selection {
   background-color: #333;
@@ -96,6 +106,7 @@ li code {
 }
 
 a {
+  /*color: #4271ae;*/
   color: #ab4642;
   /*color: #85144b;*/
   text-decoration: none;
@@ -222,6 +233,7 @@ nav ul li {
 }
 
 a.active {
+  /*background-color: #4271ae;*/
   background-color: #ab4642;
   /*background-color: #85144b;*/
   color: #ffffff;
