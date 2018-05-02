@@ -38,10 +38,10 @@ Please pick one of the following options:
 --- Type one of the keys in parentheses ---
 ```
 
-I don't know about you, but even after using zsh for multiple years, if I ever
-see this, it's very rare that I take the time to go through this process every
+I don't know about you, but even after using zsh for multiple years, if I see
+this, it's very rare that I take the time to go through this process every
 time: it's daunting and easy to end up with a config file that's just a tiny
-bit different on each of your computers leading to tons of frustration.
+bit different on each of your computers which can lead to tons of frustration.
 
 That's where I see the main advantages of a config framework: providing a much
 better out of the box experience for zsh and providing a base to build a
