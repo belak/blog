@@ -13,3 +13,7 @@
 # Intro to Pyramid
 
 # Intro to Django
+
+# Intro to SQLAlchemy
+
+# SQLAlchemy vs Django ORM
