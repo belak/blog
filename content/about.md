@@ -42,6 +42,8 @@ my employer.
   rewrote a large portion of how responses were cached to make this usable for
   large Google Music streamlign libraries. I haven't had as much time for this
   as I'd like lately, but I still provide the occasional patch.
+- [zsh-utils](https://github.com/belak/zsh-utils) - A small collection of
+  focused zsh plugins aimed at making the default experience better.
 
 ## Made with
 
