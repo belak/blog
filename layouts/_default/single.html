@@ -18,7 +18,7 @@
 
     {{ if .Params.tags }}
       <p>
-        {{ range .Params.tags }}
+        {{ range sort .Params.tags }}
           <a href="/tags/{{ . }}">#{{ . }}</a>
         {{ end }}
       </p>

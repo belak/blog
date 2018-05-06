@@ -9,13 +9,11 @@
     {{ .Summary }}
   </p>
 
-  {{ if .Params.tags }}
-    {{ range .Params.tags }}
-      <a href="/tags/{{ . }}">#{{ . }}</a>
-    {{ end }}
+  {{ range sort .Params.tags }}
+    <a href="/tags/{{ . }}">#{{ . }}</a>
   {{ end }}
 
   <p>
-    <a href="{{ .Permalink }}" class="continue-reading" title="{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}">Continue reading&hellip;</a>
+    <a href="{{ .Permalink }}" class="continue-reading" title="{{ .Title }}{{ if .Draft }} :: DRAFT{{ end }}">Continue reading&hellip;</a>
   </p>
 </article>
