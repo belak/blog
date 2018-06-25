@@ -79,3 +79,23 @@ There are a number of other config frameworks which I would be remiss to avoid
 mentioning such as [zim](https://github.com/zimfw/zimfw) (a solid framework
 originally forked from prezto which aims to be faster and more consistently
 maintained).
+
+## What's Hard About Maintaining a ZSH Framework
+
+There are a number of frustrations I've run into with maintaining presto. Some
+of these cannot be avoided, some can.
+
+Problems which can be solved:
+
+- Interconnected modules make it hard to make big changes. This can be solved by
+  clearly defining interfaces between modules. As an example, the git module in
+  prezto tries really hard to do this).
+- Module dependencies aren't well defined. This can be solved by explicitly
+  defining relationships between modules and building infrastructure to handle
+  those relationships. This can unfortunately add a huge layer of complexity.
+
+Problems which don't have a clear solution:
+
+- Module quality and maintenance status varies
+- Handling conflicting feature requests
+- Repo owner MIA with conflicting ideas about the future
