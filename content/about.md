@@ -54,7 +54,7 @@ the theme from [BitCannon](http://bitcannon.net/). Penguin icon made by
 
 ## Contact me
 
-If you'd like to reach me, you can email me at [belak@coded.io](mailto:belak@coded.io)
+If you'd like to reach me, you can email me at [kaleb@coded.io](mailto:kaleb@coded.io)
 or you can try one of the other sites listed below:
 
 - [Github](https://github.com/belak)
