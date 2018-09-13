@@ -1,7 +1,7 @@
 FROM nginx:alpine
 MAINTAINER Kaleb Elwert <belak@coded.io>
 
-ENV HUGO_VERSION 0.37
+ENV HUGO_VERSION 0.48
 ENV HUGO_ARCHIVE hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 RUN mkdir /site

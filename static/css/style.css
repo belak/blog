@@ -1,11 +1,11 @@
-/* Styles based on http://bitcannon.net/ */
-
 body {
   margin: 0px auto;
-  max-width: 600px;
+  max-width: 800px;
   line-height: 1.6;
   color: #333;
   padding: 0 10px;
+  font-size: 13px;
+
   /*
    * Consolas: Windows, Mac
    * Menlo: Mac, iOS
@@ -15,71 +15,38 @@ body {
   font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
 
   /*
-   * Github Monospace Font
-   * font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+   * This hack is for the sticky footer. We essentially define this element as
+   * a flex container with a minimum height of 100 percent of the viewport.
    */
-  font-size: 13px;
-}
-
-body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+/*
+ * In order for the sticky footer to work, we need the content section to expand
+ * and fill up as much space as is available.
+ */
 main {
   flex: 1;
 }
 
-/*
-::-moz-selection {
-  background-color: #333;
-  color: snow;
+/* Style utils */
+.chevron {
+  font-size: 2em;
+  color: inherit;
+  border: none;
+  vertical-align: bottom;
 }
 
-::selection {
-  background-color: #333;
-  color: snow;
+.pull-left {
+  float: left;
 }
-*/
-
-body > header {
-  margin: 1em 0 3em 0;
-  font-size: larger;
-  letter-spacing: -0.04em;
+.pull-right {
+  float: right;
 }
 
-h1, h2, h3, h4, h5 {
-  line-height: 1.2;
-  /*
-   * Trebuchet MS: Mac, Windows, iOS
-   * Cantarell: Linux
-   * Noto Sans: Linux, Android
-   */
-  font-family: "Trebuchet MS", "Noto Sans", "Cantarell", "Helvetica Neue", sans-serif;
-  font-weight: 600;
-}
-h1 {
-  font-size: 1.75em;
-}
-h2 {
-  font-size: 1.5em;
-}
-h3 {
-  font-size: 1.25em;
-}
-h4 {
-  font-size: 1.1em;
-}
-
-article {
-  margin-bottom: 4em;
-}
-article h1 {
-  text-transform: uppercase;
-  font-weight: normal;
-  margin-bottom: 0.4em;
-}
+/* General page styles */
 
 time {
   text-transform: uppercase;
@@ -89,73 +56,26 @@ time {
   color: #666;
 }
 
-pre,
-code {
-  font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
+a,
+a:visited {
+  text-decoration:none;
+  color:#1e89c6;
+  border-bottom: 2px solid;
 }
-pre {
-  white-space: pre-wrap;
-  border-left: 3px solid #ddd;
-  margin: 2em 0;
-  padding: 0.5em 0 0.5em 1em;
-}
-p code,
-li code {
-  color: #222;
-  font-weight: bolder;
-}
-
-a {
-  /*color: #4271ae;*/
-  color: #ab4642;
-  /*color: #85144b;*/
+a.active {
+  /*background-color: #4271ae;*/
+  background-color: #1e89c6;
+  /*background-color: #85144b;*/
+  color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid;
 }
-a:visited {
-}
 a:hover {
-  color: #001f3f;
-}
-a:active {
-}
-a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
-  border: none;
+  color:#FFF;
+  background-color:#4271ae;
 }
 
-img, canvas, iframe, video, svg, select, textarea {
-  max-width: 100%;
-}
-figure {
-  margin: 0 0 1.5em;
-}
-figcaption h4 {
-  margin-top: 0.25em;
-}
-blockquote {
-  font-style: italic;
-  margin: 0;
-  padding: 0 1em 0;
-  border-left: 2px solid #7FDBFF;
-}
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  color: #ddd;
-  overflow: visible;
-  margin: 3em 0 1em 0;
-  padding: 0;
-  text-align: center;
-}
-hr:after {
-  content: "§"; /* pronounced "Section sign" */
-  display: inline-block;
-  font-size: 1.5em;
-  position: relative;
-  padding: 0 0.25em;
-  top: -0.8em;
-  background-color: #fff;
-}
+/* Pagination styles */
 
 .pagination {
   text-align: center;
@@ -173,34 +93,29 @@ same element as a floated div to make sure we get the margins we expect. */
   visibility: hidden;
 }
 
-.chevron {
-  font-size: 2em;
-  color: inherit;
-  border: none;
-  vertical-align: bottom;
+/* Header styles */
+
+body > header {
+  margin: 1em 0 3em 0;
+  font-size: larger;
+  letter-spacing: -0.04em;
 }
 
-.screenshot img {
-  border: 1px solid #666;
-}
-
-.pull-left {
-  float: left;
-}
-.pull-right {
+nav {
   float: right;
 }
 
-.subtitle {
-  font-style: italic;
-  margin-top: 0;
-  color: #444;
+nav ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
 }
 
-.center-media {
-  display: block;
-  margin: 0 auto;
+nav ul li {
+  display: inline-block;
 }
+
+/* Footer styles */
 
 body > footer {
   text-align: center;
@@ -217,26 +132,98 @@ tr:nth-of-type(odd) {
   background: #eee;
 }
 
-/* Added by belak */
-nav {
-  float: right;
+/* Article styling */
+article {
+  margin-bottom: 4em;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-nav ul {
-  list-style: none;
-  display: inline-block;
+article h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0.4em;
+}
+
+article h2, h3, h4, h5 {
+  margin:30px 0px 10px 0px;
+}
+
+article ul { margin:0px 10px 0px 0px; }
+
+/* Article element styles */
+pre,
+code {
+  /* Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace */
+  font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
+}
+pre {
+  white-space: pre-wrap;
+  border-left: 3px solid #ddd;
+  margin: 2em 0;
+  padding: 0.5em 0 0.5em 1em;
+}
+p code,
+li code {
+  color: #222;
+  font-weight: bolder;
+}
+
+
+a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
+  border: none;
+}
+
+img, canvas, iframe, video, svg, select, textarea {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 1.5em;
+}
+
+figcaption h4 {
+  margin-top: 0.25em;
+}
+
+blockquote {
+  font-style: italic;
   margin: 0;
+  padding: 0 1em 0;
+  border-left: 2px solid #7FDBFF;
 }
 
-nav ul li {
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  color: #ddd;
+  overflow: visible;
+  margin: 3em 0 1em 0;
+  padding: 0;
+  text-align: center;
+}
+
+hr:after {
+  content: "§"; /* pronounced "Section sign" */
   display: inline-block;
+  font-size: 1.5em;
+  position: relative;
+  padding: 0 0.25em;
+  top: -0.8em;
+  background-color: #fff;
 }
 
-a.active {
-  /*background-color: #4271ae;*/
-  background-color: #ab4642;
-  /*background-color: #85144b;*/
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 2px solid;
+.center-media {
+  display: block;
+  margin: 0 auto;
+}
+
+.screenshot img {
+  border: 1px solid #666;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-top: 0;
+  color: #444;
 }
