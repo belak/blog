@@ -3,6 +3,7 @@ title = "Coded by Kaleb"
 baseURL = "https://coded.io/"
 #disqusShortname = "coded"
 SectionPagesMenu = "main"
+googleAnalytics = "UA-37792462-2"
 
 pygmentsCodeFences = true
 pygmentsUseClasses = true
