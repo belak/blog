@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: master
-  group: build
+  depends_on: [ clone ]
   image: plugins/docker
   settings:
     repo: belak/blog
@@ -18,7 +18,7 @@ steps:
     - master
 
 - name: beta
-  group: build
+  depends_on: [ clone ]
   image: plugins/docker
   settings:
     repo: belak/blog
