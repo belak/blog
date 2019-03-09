@@ -1,0 +1,94 @@
+---
+title: "An Intro to zsh-utils"
+date: 2019-03-08T14:54:00-07:00
+tags: ["zsh", "dotfiles", "zsh-utils"]
+draft: true
+---
+
+# An Intro to zsh-utils
+
+## What's This?
+
+Taken from the project README, [zsh-utils](https://github.com/belak/zsh-utils) is "a minimal set of ZSH plugins designed to be low-friction and low-complexity."
+
+After getting frustrated with the maintenance of prezto and oh-my-zsh, I decided to write my own small config framework, in a similar vein to some of the starter kits.
+
+## Why Another Framework?
+
+After spending quite a bit of my time maintaining prezto, there were a number of main problems I noticed:
+
+- Most zsh config frameworks contain a bundled plugin manager along with a number of modules. It would make more sense to officially support an external plugin manager and focus development on the plugins.
+- It takes a ton of work to get a module ready for prezto, even if it's small.
+- A number of large frameworks set up very strange defaults.
+- Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
+- Some plugin managers build very non-standard ways to configure zsh (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format). 
+- They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
+- So many modules have way too many options, sometimes because they're trying to do too many things.
+
+That being said, there are a number of strengths to large configuration frameworks as well.
+
+- Plugins can work well together. As an example, prezto's git plugin provides a git-info command which can be used by prompts to display git information without the prompts having to implement this themselves.
+- Having a number of plugins bundled together in one place makes it simple to enable the ones you want without having to do a bunch of additional work.
+
+## Ok, So Why This One?
+
+This project aims to solve some of the problems faces by larger frameworks by focusing on the following goals:
+
+- Loadable by any compatible plugin manager
+- Plugins will be kept small, relatively inflexible, well documented, and well organized
+- No external dependencies without very good reason
+- Focus on improving the existing experience rather than expanding it
+
+Each plugin has a very focused goal:
+
+- completion configures and loads compinit
+- editor sets up some keybinds to fix some rough edges
+- history configures and loads the history
+- prompt runs promptinit and provides a maximum of one prompt per maintainer
+- utility aims to facilitate cross-platform tooling by adding aliases for common functions which match across platforms
+
+That's it! There are no plugins for programming languages. There are no custom formats. And there is no configuration outside loading the plugins and optionally overriding ZSH settings.
+
+## Sounds Great! Where Do I Start?
+
+If this is something that sounds useful to you, it's fairly easy to get started.
+
+Simply replace your `.zshrc` with the following snippet. This is copied directly from the setup in the zsh-utils README. 
+
+It downloads antigen if it doesn't exist (straight from the source) and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
+
+```sh
+[[ ! -d "$HOME/.antigen" ]] && git clone https://github.com/zsh-users/antigen.git "$HOME/.antigen"
+source "$HOME/.antigen/antigen.zsh"
+
+# Set the default plugin repo to be zsh-utils
+antigen use belak/zsh-utils
+
+# Specify completions we want before the completion module
+antigen bundle zsh-users/zsh-completions
+
+# Specify plugins we want
+antigen bundle editor
+antigen bundle history
+antigen bundle prompt
+antigen bundle utility
+antigen bundle completion
+
+# Specify additional external plugins we want
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load everything
+antigen apply
+
+# Set any settings or overrides here
+prompt belak
+bindkey -e
+```
+
+Alternatively, the [my dotfiles](https://github.com/belak/dotfiles/blob/master/zshrc) are a good place to start.
+
+## Now What?
+
+Just use ZSH! If you have any problems, feel free to [file an issue](https://github.com/belak/zsh-utils/issues/new) or open a pull request if you're feeling up for it.
+
+Thanks for reading!
