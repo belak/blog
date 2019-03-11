@@ -1,19 +1,33 @@
 ---
 title: "An Intro to zsh-utils"
-date: 2019-03-08T14:54:00-07:00
+date: 2019-03-11T14:54:00-07:00
 tags: ["zsh", "dotfiles", "zsh-utils"]
 draft: true
 ---
 
-# An Intro to zsh-utils
+ZSH is an extremely powerful tool which can be very useful but hard to configure. zsh-utils aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
 
-## What Is This?
+<!--more-->
+
+# Why Use a Config Framework?
+
+Full disclosure: I am currently one of the main maintainers of prezto and the sole maintainer of zsh-utils, so this article *will* have a bias. However, if you see any incorrect points in here, please let me know and I'll happily amend them.
+
+If you've ever started zsh without a config file before, you've probably seen the following mass of text before:
+
+![zsh-newuser-install]()
+
+Even after using zsh for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's just a tiny bit different on each of your computers, leading to tons of frustration.
+
+That's where I see the main advantages of a config framework: providing a much better out of the box experience for zsh and providing a base to build a personal config off of.
+
+# What Is This?
 
 Taken from the project README, [zsh-utils](https://github.com/belak/zsh-utils) is "a minimal set of ZSH plugins designed to be low-friction and low-complexity."
 
 After getting frustrated with the maintenance of prezto and oh-my-zsh, I decided to write my own small config framework, in a similar vein to some of the starter kits.
 
-## Why Another Framework?
+# Why Another Framework?
 
 There were a number of main problems I noticed during my time maintaining prezto:
 
@@ -21,7 +35,7 @@ There were a number of main problems I noticed during my time maintaining prezto
 - It takes a ton of work to get a module ready for prezto, even if it's small.
 - A number of large frameworks set up very strange defaults.
 - Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
-- Some plugin managers build very non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format). 
+- Some plugin managers build very non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
 - They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
 - So many modules have way too many options, often because they're trying to do too many things.
 
@@ -32,7 +46,7 @@ That being said, there are a number of strengths to large configuration framewor
 
 These are not really something I’m looking for. I want to use a shell as a shell and keep everything as simple as possible so it doesn’t get overwhelming.
 
-## Ok, So Why This One?
+# Ok, So Why This One?
 
 This project aims to solve some of the problems faced by larger frameworks by focusing on the following clear goals:
 
@@ -51,11 +65,11 @@ Each plugin has a very focused purpose:
 
 That's it! There are no plugins for programming languages. There are no custom formats. And there is no configuration outside loading the plugins and optionally overriding ZSH settings.
 
-## Sounds Great! How Do I Start?
+# Sounds Great! How Do I Start?
 
 If this is something that sounds useful to you, it's fairly easy to get started.
 
-Simply replace your `.zshrc` with the following snippet. This is copied directly from the setup in the zsh-utils README. 
+Simply replace your `.zshrc` with the following snippet. This is copied directly from the setup in the zsh-utils README.
 
 It downloads antigen if it doesn't exist (straight from the source) and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
 
@@ -89,7 +103,7 @@ bindkey -e
 
 Alternatively, [my dotfiles](https://github.com/belak/dotfiles/blob/master/zshrc) are a good resource and starting point.
 
-## Now What?
+# Now What?
 
 Just use ZSH! If you have any problems, feel free to [file an issue](https://github.com/belak/zsh-utils/issues/new) or open a pull request if you're feeling up for it.
 
