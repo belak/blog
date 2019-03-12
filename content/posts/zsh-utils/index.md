@@ -5,7 +5,7 @@ tags: ["zsh", "dotfiles", "zsh-utils"]
 draft: true
 ---
 
-ZSH is an extremely powerful tool which can be very useful but hard to configure. zsh-utils aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
+ZSH is an extremely powerful tool which can be very useful but hard to configure. [zsh-utils](https://github.com/belak/zsh-utils) aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
 
 <!--more-->
 
@@ -67,9 +67,9 @@ That's it! There are no plugins for programming languages. There are no custom f
 
 If this is something that sounds useful to you, it's fairly easy to get started.
 
-Simply replace your `.zshrc` with the following snippet. This is copied directly from the setup in the zsh-utils README.
+Simply replace your `.zshrc` with the following snippet. This is [copied directly from the setup](https://github.com/belak/zsh-utils/#recommended-installation) in the zsh-utils README.
 
-It downloads antigen if it doesn't exist (straight from the source) and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
+It downloads [antigen](https://github.com/zsh-users/antigen.git), a simple plugin manager, straight from the source if it doesn't exist and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
 
 ```sh
 [[ ! -d "$HOME/.antigen" ]] && git clone https://github.com/zsh-users/antigen.git "$HOME/.antigen"
