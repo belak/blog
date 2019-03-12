@@ -1,6 +1,6 @@
 ---
 title: "An Intro to zsh-utils"
-date: 2019-03-11T14:54:00-07:00
+date: 2019-03-11T17:00:00-07:00
 tags: ["zsh", "dotfiles", "zsh-utils"]
 draft: true
 ---
