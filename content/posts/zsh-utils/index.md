@@ -3,6 +3,7 @@ title: "An Intro to zsh-utils"
 date: 2019-03-11T17:00:00-07:00
 tags: ["zsh", "dotfiles", "zsh-utils"]
 draft: true
+hide_updated: true
 ---
 
 ZSH is an extremely powerful tool which can be very useful but hard to configure. [zsh-utils](https://github.com/belak/zsh-utils) aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.

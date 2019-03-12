@@ -8,8 +8,10 @@
     {{ if gt .Date 0 }}
       <time datetime="{{ .Date.Format "2006-01-02T15:04" }}">Posted {{ .Date.Format "02 January 2006" }}</time>
     {{ end }}
-    {{ if ne .Date .Lastmod }}
-      <time datetime="{{ .Lastmod.Format "2006-01-02T15:04" }}">Updated {{ .Lastmod.Format "02 January 2006" }}</time>
+    {{ if not .Params.hide_updated }}
+      {{ if ne .Date .Lastmod }}
+        <time datetime="{{ .Lastmod.Format "2006-01-02T15:04" }}">Updated {{ .Lastmod.Format "02 January 2006" }}</time>
+      {{ end }}
     {{ end }}
 
     <div>
