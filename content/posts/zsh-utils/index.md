@@ -2,7 +2,6 @@
 title: "An Intro to zsh-utils"
 date: 2019-03-12T11:15:00-07:00
 tags: ["zsh", "dotfiles", "zsh-utils"]
-draft: true
 hide_updated: true
 ---
 
@@ -14,7 +13,7 @@ ZSH is an extremely powerful tool which can be very useful but hard to configure
 
 If you've ever started zsh without a config file before, you've probably seen the following mass of text before:
 
-![zsh-newuser-install](./1-zsh-newuser-install.png)
+![screenshot of zsh-newuser-install](./1-zsh-newuser-install.png)
 
 Even after using ZSH for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's different on each of your computers, leading to tons of frustration.
 
