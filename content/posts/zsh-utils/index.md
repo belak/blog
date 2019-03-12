@@ -11,15 +11,13 @@ ZSH is an extremely powerful tool which can be very useful but hard to configure
 
 # Why Use a Config Framework?
 
-Full disclosure: I am currently one of the main maintainers of prezto and the sole maintainer of zsh-utils, so this article *will* have a bias. However, if you see any incorrect points in here, please let me know and I'll happily amend them.
-
 If you've ever started zsh without a config file before, you've probably seen the following mass of text before:
 
-![zsh-newuser-install]()
+![zsh-newuser-install](./1-zsh-newuser-install.png)
 
-Even after using zsh for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's just a tiny bit different on each of your computers, leading to tons of frustration.
+Even after using ZSH for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's different on each of your computers, leading to tons of frustration.
 
-That's where I see the main advantages of a config framework: providing a much better out of the box experience for zsh and providing a base to build a personal config off of.
+That's where I see the main advantages of a config framework: providing a much better out of the box ZSH experience and providing a base to build a personal config off of.
 
 # What Is This?
 
@@ -57,11 +55,11 @@ This project aims to solve some of the problems faced by larger frameworks by fo
 
 Each plugin has a very focused purpose:
 
-- `completion` configures and loads compinit
-- `editor` sets up some keybinds to fix some rough edges
-- `history` configures and loads the history
-- `prompt` runs promptinit and provides a maximum of one prompt per maintainer
-- `utility` aims to facilitate cross-platform tooling by adding aliases for common functions which match across platforms
+- `completion` configures and loads basic tab completion (imagine bash tab completion on steroids). It's also recommended to use an additional set of [zsh-completions](https://github.com/zsh-users/zsh-completions) because this plugin only sets up the completion system and doesn't provide completions for common utils.
+- `editor` sets up some keybinds to fix some rough edges. It adds a few missing default key-binds such as Home/End and aims to add a few Vim features to the vi keybind set.
+- `history` configures and loads the shell history systems.
+- `prompt` runs initializes the built-in zsh theming system and provides a place for maintainers to put the prompt they use.
+- `utility` makes it easier to switch between operating systems by adding aliases for common operations so you don't need to remember different commands across platforms.
 
 That's it! There are no plugins for programming languages. There are no custom formats. And there is no configuration outside loading the plugins and optionally overriding ZSH settings.
 

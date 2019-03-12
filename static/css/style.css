@@ -176,6 +176,10 @@ a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
 
 img, canvas, iframe, video, svg, select, textarea {
   max-width: 100%;
+  /*
+  display: block;
+  margin: auto;
+  */
 }
 
 figure {
