@@ -1,7 +1,18 @@
 {{ define "main" }}
-  {{ range where .Paginator.Pages "Section" "ne" "" }}
-    {{ partial "article-preview" . }}
-  {{ end }}
+  <ul>
+    {{ range where .Paginator.Pages "Section" "ne" "" }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04" }}">{{ .Date.Format "2006-01-02" }}</time>
+        <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+
+        <div class="pull-right">
+          {{ range sort .Params.tags }}
+            <a href="/tags/{{ . }}/">#{{ . }}</a>
+          {{ end }}
+        </div>
+      </li>
+    {{ end }}
+  </ul>
 
   {{ partial "paginator" .Paginator }}
 {{ end }}
