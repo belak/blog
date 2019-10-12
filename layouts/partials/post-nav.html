@@ -1,17 +1,23 @@
 {{ if (or .PrevInSection .NextInSection) }}
-  <div class="post-navigation">
-    {{ with .PrevInSection }}
-      <div class="pull-left">
-        <a href="{{ .Permalink }}" class="chevron">&lsaquo;</a>
-        <a href="{{ .Permalink }}">Previous Post</a>
-      </div>
-    {{ end }}
+  <ul class="meta-list">
+    <li>
+      <b>Next:</b>
+      {{ with .NextInSection }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ else }}
+        -
+      {{ end }}
+    </li>
 
-    {{ with .NextInSection }}
-      <div class="pull-right">
-        <a href="{{ .Permalink }}">Next Post</a>
-        <a href="/post/installing-rust-on-chip/" class="chevron">&rsaquo;</a>
-      </div>
-    {{ end }}
-  </div>
+    <li>
+      <b>Prev:</b>
+      {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ else }}
+        -
+      {{ end }}
+    </li>
+  </ul>
+
+  <hr>
 {{ end }}

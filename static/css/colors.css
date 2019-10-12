@@ -1,0 +1,107 @@
+:root {
+    /*
+     * We want to provide a nice monospace font if at all possible but fall back to
+     * the OS level if we need to.
+     *
+     * Consolas: Windows, Mac
+     * Menlo: Mac, iOS
+     * Deja Vu Sans Mono: Linux
+     * Noto Mono: Linux, Android
+     */
+    --default-font: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
+
+    /* light-mode */
+    --background: #ffffff;
+    --foreground: #4d4d4c;
+    --heading: #282a2e;
+    --link: #6699cc;
+    /*--link-visited: #8959a8;*/
+    --link-visited: #6699cc;
+    --link-hover: #81a2be;
+
+    /* Tomorrow (base16) */
+    --base00: #ffffff;
+    --base01: #e0e0e0;
+    --base02: #d6d6d6;
+    --base03: #8e908c;
+    --base04: #969896;
+    --base05: #4d4d4c;
+    --base06: #282a2e;
+    --base07: #1d1f21;
+    --base08: #c82829;
+    --base09: #f5871f;
+    --base0A: #eab700;
+    --base0B: #718c00;
+    --base0C: #3e999f;
+    --base0D: #4271ae;
+    --base0E: #8959a8;
+    --base0F: #a3685a;
+  }
+
+  /* Any dark-mode overrides */
+  @media (prefers-color-scheme: dark) {
+    /*
+     * We only want to set dark mode if they prefer dark mode and .light-mode
+     * isn't enabled.
+     */
+    :root body:not(.light-mode) {
+      /* dark-mode */
+      --background: #1d1f21;
+      --foreground: #c5c8c6;
+      --heading: #e0e0e0;
+      --link: #81a2be;
+      /*--link-visited: #b294bb;*/
+      --link-visited: #81a2be;
+      --link-hover: #6699cc;
+
+      /* Tomorrow Night (base16) */
+      --base00: #1d1f21;
+      --base01: #282a2e;
+      --base02: #373b41;
+      --base03: #969896;
+      --base04: #b4b7b4;
+      --base05: #c5c8c6;
+      --base06: #e0e0e0;
+      --base07: #ffffff;
+      --base08: #cc6666;
+      --base09: #de935f;
+      --base0A: #f0c674;
+      --base0B: #b5bd68;
+      --base0C: #8abeb7;
+      --base0D: #81a2be;
+      --base0E: #b294bb;
+      --base0F: #a3685a;
+    }
+  }
+
+  /*
+   * If they explicitly set dark mode, we need to enable it.
+   */
+  :root.dark-mode {
+    /* dark-mode */
+    --background: #1d1f21;
+    --foreground: #c5c8c6;
+    --heading: #e0e0e0;
+    --link: #81a2be;
+    /*--link-visited: #b294bb;*/
+    --link-visited: #81a2be;
+    --link-hover: #6699cc;
+
+    /* Tomorrow Night (base16) */
+    --base00: #1d1f21;
+    --base01: #282a2e;
+    --base02: #373b41;
+    --base03: #969896;
+    --base04: #b4b7b4;
+    --base05: #c5c8c6;
+    --base06: #e0e0e0;
+    --base07: #ffffff;
+    --base08: #cc6666;
+    --base09: #de935f;
+    --base0A: #f0c674;
+    --base0B: #b5bd68;
+    --base0C: #8abeb7;
+    --base0D: #81a2be;
+    --base0E: #b294bb;
+    --base0F: #a3685a;
+  }

@@ -16,7 +16,7 @@
   </script>
 
   <link rel="canonical" href="{{ .Permalink }}">
-  {{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
+  <!-- TODO: Re-add RSS -->
 
   <title>
     {{ block "title" . }}
@@ -24,11 +24,15 @@
     {{ end }}
   </title>
 
+  <script async src="/js/dark-mode.js"></script>
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/colors.css">
+  <link rel="stylesheet" href="/css/style-legacy.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/chroma.css">
 </head>
 <body>
-  <!-- {{ . | jsonify }} -->
   <header>
     <a href="/">
       <svg viewBox="0 0 300 300" width="14" height="14" fill="currentcolor">
@@ -71,8 +75,11 @@
   </main>
 
   <footer>
+    <p id="dark-mode-toggle">
+      <a href="#" onclick="event.preventDefault(); toggleDarkMode()">Toggle Dark Mode</a>
+    </p>
     <div class="copyright">
-      Copyright &copy; 2018 <a href="/">Kaleb Elwert</a>
+      Copyright &copy; 2019 <a href="/">Kaleb Elwert</a>
     </div>
   </footer>
 </body>

@@ -1,18 +1,26 @@
 {{ define "main" }}
-  <ul>
-    {{ range where .Paginator.Pages "Section" "ne" "" }}
-      <li>
-        <time datetime="{{ .Date.Format "2006-01-02T15:04" }}">{{ .Date.Format "2006-01-02" }}</time>
-        <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+  <table id="article-list">
+    <tr>
+      <th>Date:</th>
+      <th colspan="2">Title:</th>
+    </tr>
 
-        <div class="pull-right">
-          {{ range sort .Params.tags }}
-            <a href="/tags/{{ . }}/">#{{ . }}</a>
-          {{ end }}
-        </div>
-      </li>
+    {{ range where .Paginator.Pages "Section" "ne" "" }}
+    <tr>
+      <td>
+        <div title="{{ .Date.Format "2006-01-02T15:04" }}">{{ .Date.Format "2006-01-02" }}</div>
+      </td>
+      <td>
+        <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+      </td>
+      <td class="tags">
+        {{ range sort .Params.tags }}
+          <a href="/tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
+      </td>
+    </tr>
     {{ end }}
-  </ul>
+  </table>
 
   {{ partial "paginator" .Paginator }}
 {{ end }}

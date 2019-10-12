@@ -9,7 +9,7 @@ ZSH is an extremely powerful tool which can be very useful but hard to configure
 
 <!--more-->
 
-# Why Use a Config Framework?
+## Why Use a Config Framework?
 
 If you've ever started zsh without a config file before, you've probably seen the following mass of text before:
 
@@ -19,13 +19,13 @@ Even after using ZSH for multiple years, if I see this, it's very rare that I ta
 
 That's where I see the main advantages of a config framework: providing a much better out of the box ZSH experience and providing a base to build a personal config off of.
 
-# What Is This?
+## What Is This?
 
 Taken from the project README, [zsh-utils](https://github.com/belak/zsh-utils) is "a minimal set of ZSH plugins designed to be low-friction and low-complexity."
 
 After getting frustrated with the maintenance of prezto and oh-my-zsh, I decided to write my own small config framework, in a similar vein to some of the starter kits.
 
-# Why Another Framework?
+## Why Another Framework?
 
 There were a number of main problems I noticed during my time maintaining prezto:
 
@@ -44,7 +44,7 @@ That being said, there are a number of strengths to large configuration framewor
 
 These are not really something I’m looking for. I want to use a shell as a shell and keep everything as simple as possible so it doesn’t get overwhelming.
 
-# Ok, So Why This One?
+## Ok, So Why This One?
 
 This project aims to solve some of the problems faced by larger frameworks by focusing on the following clear goals:
 
@@ -63,7 +63,7 @@ Each plugin has a very focused purpose:
 
 That's it! There are no plugins for programming languages. There are no custom formats. And there is no configuration outside loading the plugins and optionally overriding ZSH settings.
 
-# Sounds Great! How Do I Start?
+## Sounds Great! How Do I Start?
 
 If this is something that sounds useful to you, it's fairly easy to get started.
 
@@ -101,11 +101,11 @@ bindkey -e
 
 Alternatively, [my dotfiles](https://github.com/belak/dotfiles/blob/master/zshrc) are a good resource and starting point.
 
-# Now What?
+## Now What?
 
 Just use ZSH! If you have any problems, feel free to [file an issue](https://github.com/belak/zsh-utils/issues/new) or open a pull request if you're feeling up for it.
 
-# Discussion
+## Discussion
 
 Want to talk more about this? There are discussion threads at the following places:
 

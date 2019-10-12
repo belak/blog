@@ -24,5 +24,4 @@ pygmentsUseClasses = true
   posts = "/:year/:month/:title/"
 
 [taxonomies]
-  category = ""
   tag = "tags"

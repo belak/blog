@@ -2,22 +2,18 @@ body {
   margin: 0px auto;
   max-width: 800px;
   line-height: 1.6;
-  color: #333;
   padding: 0 10px;
   font-size: 14px;
 
-  /*
-   * Consolas: Windows, Mac
-   * Menlo: Mac, iOS
-   * Deja Vu Sans Mono: Linux
-   * Noto Mono: Linux, Android
-   */
-  font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
+  font-family: var(--default-font);
+
+  background-color: var(--background);
+  color: var(--foreground);
 
   /*
-   * This hack is for the sticky footer. We essentially define this element as
-   * a flex container with a minimum height of 100 percent of the viewport.
-   */
+  * This hack is for the sticky footer. We essentially define this element as
+  * a flex container with a minimum height of 100 percent of the viewport.
+  */
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -31,25 +27,99 @@ main {
   flex: 1;
 }
 
-/* Style utils */
-.chevron {
-  font-size: 2em;
-  color: inherit;
-  border: none;
-  vertical-align: bottom;
+/* Header styles */
+
+body > header {
+  margin: 1em 0 1em 0;
+  font-size: larger;
+  letter-spacing: -0.04em;
 }
 
-.pull-left {
-  float: left;
-}
-.pull-right {
+nav {
   float: right;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+.meta-list {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer styles */
+
+body > footer {
+  text-align: center;
+  clear: both;
+  margin: 1em 0 2em 0;
+}
+
+tr:first-child {
+  font-weight: bold;
+  color: var(--heading);
 }
 
 /* General page styles */
 
+a,
+a:visited {
+  text-decoration:none;
+  color: var(--link);
+  border-bottom: 2px solid;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a.active {
+  background-color: var(--link);
+  color: var(--background);
+  text-decoration: none;
+  border-bottom: 2px solid;
+}
+a:hover {
+  color: var(--background);
+  background-color: var(--link-hover);
+}
+
 time {
   color: #666;
+}
+
+b, strong {
+  color: var(--heading);
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--heading);
+}
+
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  color: #ddd;
+  overflow: visible;
+  margin: 2em 0 2em 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Article styling */
+article {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 article time {
@@ -58,23 +128,65 @@ article time {
   margin-bottom: 0.3em;
 }
 
-a,
-a:visited {
-  text-decoration:none;
-  color:#1e89c6;
-  border-bottom: 2px solid;
+article h1 {
+  text-transform: uppercase;
+  font-weight: bold;
 }
-a.active {
-  /*background-color: #4271ae;*/
-  background-color: #1e89c6;
-  /*background-color: #85144b;*/
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 2px solid;
+
+article h2, h3, h4, h5 {
+  margin: 30px 0px 10px 0px;
 }
-a:hover {
-  color:#FFF;
-  background-color:#4271ae;
+
+article ul {
+  margin: 0px 10px 0px 0px;
+}
+
+article figure {
+  margin: 0 0 1.5em;
+}
+
+article figcaption h4 {
+  margin-top: 0.25em;
+}
+
+article blockquote {
+  font-style: italic;
+  margin: 0;
+  padding: 0 1em 0;
+  border-left: 2px solid #7FDBFF;
+}
+
+/* Article element styles */
+article pre,
+article code {
+  font-family: var(--default-font);
+}
+article pre {
+  white-space: pre-wrap;
+  border-left: 3px solid var(--foreground);
+  margin: 2em 0;
+  padding: 0.5em 0 0.5em 1em;
+}
+article p code,
+article li code {
+  color: var(--heading);
+  font-weight: bolder;
+}
+
+/*
+a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
+  border: none;
+}
+*/
+
+article img,
+article svg {
+  max-width: 100%;
+  /*
+  display: block;
+  margin: auto;
+  border: 1px solid #666;
+  */
 }
 
 /* Pagination styles */
@@ -95,141 +207,29 @@ same element as a floated div to make sure we get the margins we expect. */
   visibility: hidden;
 }
 
-/* Header styles */
+/* Dark mode helpers */
 
-body > header {
-  margin: 1em 0 2em 0;
-  font-size: larger;
-  letter-spacing: -0.04em;
+/*
+ * We start off with the toggle set to hidden so we can un-hide it if the user
+ * has scripts enabled.
+ */
+#dark-mode-toggle {
+  display: none;
 }
 
-nav {
-  float: right;
+/* Various helpers */
+#article-list {
+  width: 100%;
 }
 
-nav ul {
-  list-style: none;
-  display: inline-block;
-  margin: 0;
+#article-list th {
+  text-align: left;
 }
 
-nav ul li {
-  display: inline-block;
+#article-list .tags {
+  text-align: right;
 }
 
-/* Footer styles */
-
-body > footer {
-  text-align: center;
-  clear: both;
-  margin: 5em 0 2em;
-}
-
-td, th {
-  padding: 0.5em 0.25em;
-}
-
-/* Zebra striping */
-tr:nth-of-type(odd) {
-  background: #eee;
-}
-
-/* Article styling */
-article {
-  margin-bottom: 4em;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-article h1 {
-  text-transform: uppercase;
-  font-weight: normal;
-  margin-bottom: 0.4em;
-}
-
-article h2, h3, h4, h5 {
-  margin:30px 0px 10px 0px;
-}
-
-article ul { margin:0px 10px 0px 0px; }
-
-/* Article element styles */
-pre,
-code {
-  /* Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace */
-  font-family: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
-}
-pre {
-  white-space: pre-wrap;
-  border-left: 3px solid #ddd;
-  margin: 2em 0;
-  padding: 0.5em 0 0.5em 1em;
-}
-p code,
-li code {
-  color: #222;
-  font-weight: bolder;
-}
-
-
-a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
-  border: none;
-}
-
-img, canvas, iframe, video, svg, select, textarea {
-  max-width: 100%;
-  /*
-  display: block;
-  margin: auto;
-  */
-}
-
-figure {
-  margin: 0 0 1.5em;
-}
-
-figcaption h4 {
-  margin-top: 0.25em;
-}
-
-blockquote {
-  font-style: italic;
-  margin: 0;
-  padding: 0 1em 0;
-  border-left: 2px solid #7FDBFF;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  color: #ddd;
-  overflow: visible;
-  margin: 3em 0 1em 0;
-  padding: 0;
-  text-align: center;
-}
-
-hr:after {
-  content: "§"; /* pronounced "Section sign" */
-  display: inline-block;
-  font-size: 1.5em;
-  position: relative;
-  padding: 0 0.25em;
-  top: -0.8em;
-  background-color: #fff;
-}
-
-.center-media {
-  display: block;
-  margin: 0 auto;
-}
-
-.screenshot img {
-  border: 1px solid #666;
-}
-
-.subtitle {
-  font-style: italic;
-  margin-top: 0;
-  color: #444;
+.heading {
+  font-weight: bold;
 }
