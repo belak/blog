@@ -16,7 +16,9 @@
   </script>
 
   <link rel="canonical" href="{{ .Permalink }}">
-  <!-- TODO: Re-add RSS -->
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
 
   <title>
     {{ block "title" . }}
