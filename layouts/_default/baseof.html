@@ -66,7 +66,7 @@
 
         {{ range .Site.Menus.main }}
           {{/* Seriously this is like lisp - I don't know how to make this better */}}
-          <a class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (and (ne $currentNode.Section "") (eq $currentNode.Section .Identifier)) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+          <li><a class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (and (ne $currentNode.Section "") (eq $currentNode.Section .Identifier)) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>
