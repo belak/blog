@@ -1,1 +1,5 @@
-Check out the theme https://gitlab.com/kaushalmodi/hugo-theme-refined
+Update theme to pull these together:
+
+https://grh.am/
+https://martinheinz.dev/
+https://dacav.roundhousecode.com/pages/home.html

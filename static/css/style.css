@@ -64,10 +64,12 @@ body > footer {
   margin: 1em 0 2em 0;
 }
 
+/*
 tr:first-child {
   font-weight: bold;
   color: var(--heading);
 }
+*/
 
 /* General page styles */
 
