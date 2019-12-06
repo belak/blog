@@ -10,6 +10,9 @@
      */
     --default-font: Consolas, Menlo, "Noto Mono", "DejaVu Sans Mono", monospace;
 
+    /* Strangely enough, this doesn't get overridden */
+    --subtitle: #666;
+
     /* light-mode */
     --background: #ffffff;
     --foreground: #4d4d4c;
@@ -47,8 +50,8 @@
     :root body:not(.light-mode) {
       /* dark-mode */
       --background: #1d1f21;
-      --foreground: #c5c8c6;
-      --heading: #e0e0e0;
+      --foreground: #c9cacc;
+      --heading: #81a2be;
       --link: #81a2be;
       /*--link-visited: #b294bb;*/
       --link-visited: #81a2be;
@@ -80,8 +83,8 @@
   :root.dark-mode {
     /* dark-mode */
     --background: #1d1f21;
-    --foreground: #c5c8c6;
-    --heading: #e0e0e0;
+    --foreground: #c9cacc;
+    --heading: #81a2be;
     --link: #81a2be;
     /*--link-visited: #b294bb;*/
     --link-visited: #81a2be;

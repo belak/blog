@@ -75,7 +75,7 @@ a,
 a:visited {
   text-decoration:none;
   color: var(--link);
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
 }
 
 a:visited {
@@ -86,7 +86,7 @@ a.active {
   background-color: var(--link);
   color: var(--background);
   text-decoration: none;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
 }
 a:hover {
   color: var(--background);
@@ -169,24 +169,13 @@ article pre {
 }
 article p code,
 article li code {
-  color: var(--heading);
+  color: var(--subtitle);
   font-weight: bolder;
 }
-
-/*
-a[href$='.png'], a[href$='.jpg'], sup a, .footnote-return {
-  border: none;
-}
-*/
 
 article img,
 article svg {
   max-width: 100%;
-  /*
-  display: block;
-  margin: auto;
-  border: 1px solid #666;
-  */
 }
 
 /* Pagination styles */
@@ -230,6 +219,14 @@ same element as a floated div to make sure we get the margins we expect. */
   text-align: right;
 }
 
+.subtitle {
+  color: var(--subtitle);
+}
+
 .heading {
   font-weight: bold;
+}
+
+.tags a {
+  color: var(--subtitle);
 }
