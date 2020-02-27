@@ -24,7 +24,7 @@ At an initial glance, the features of Rust seem to line up well with things I co
 ## Things I Like
 
 - First class `enum` support. Being able to match on an enum variant is really nice, especially because you can include different values with different variants.
-- `Result` and `Option`
+- `Result` and `Option`. Being able to propagate errors using `?` rather than `if err != nil { return err }` is really nice. There are some oddities around conversions between error types (and having to use an external crate like `anyhow`, `failure`, or `snafu` to get a truely generic error type), but having the convenience in propagation makes that easy to look past.
 - Generics. This has become a contentious topic in the Go community. I had resigned myself to never getting them in Go because at least for me, interfaces are generally good enough. Rust does some pretty impressive things with them (allowing generic conversions by implementing `From`, extension traits, etc) and they've gone a long way to showing me what I was missing with Go.
 - Explicit interfaces. In Go, you cannot have multiple functions with the same name. Because of how this interacts with implicit interfaces, if two interfaces you need to implement require a method with the same name, it gets very hard to manage. Normally this is not an issue, but I like being explicit about things.
 - Explicit visibility and privacy. It's really nice to know that only exported functions are going to be exported. In Go the upper case for exported, lower case for non-exported seems like a very strange design decision.
@@ -39,7 +39,7 @@ I debated putting the borrow checker in here, but decided against it. I have a n
 - Switches must be exhaustive. Because one of my main personal projects deals with strings, I'm often dealing with matching against them. With IRC, you only have a small number of message types you probably want to match on, but Rust enforces the default case.
 - It's been a long while since I've had to think about actual memory management, so having to wrap everything in an Arc in order to make it work with async was frustrating. Go lets you be very loose about memory (`&SomeStruct{}` will return a pointer to that struct, but because of lifetimes, this is not really possible in rust).
 - Lifetimes. In particular, it is very hard to make a type which can escape a lifetime. I wanted to make an IRC message type which could be read and used inside an async task, but if you want it to survive outside that lifetime, you need to use `Cow<str>` for every string type which gets painful.
-- `String`/`&str`/`Cow<str>`. There are places for all of these, but understanding where they fit in has taken a lot of time.
+- `String`/`&str`/`Cow<str>`. There are places for all of these, but understanding where they fit in has taken a lot of time and experimentation.
 
 ## Things I Dislike
 
