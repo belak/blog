@@ -65,7 +65,7 @@ Even though both languages could be thought of as replacements for C on a range 
 
 Want to talk more about this? There are discussion threads at the following locations:
 
-- [lobste.rs](#)
-- [Hacker News](#)
+- [lobste.rs](https://lobste.rs/s/gu3s9u/early_impressions_rust_from_go)
+- [Hacker News](https://news.ycombinator.com/item?id=22438880)
 
 Thanks for reading!
