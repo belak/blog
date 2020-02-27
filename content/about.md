@@ -20,7 +20,7 @@ my employer.
 
 ## Other projects
 
-- [go-gitdir](https://github.com/belak/go-gitdir) - An ssh server for serving
+- [gitdir](https://github.com/belak/gitdir) - An ssh server for serving
   git repos designed to provide a simple way to store repos in a secure fashion.
 - [go-irc](https://github.com/go-irc/irc) - An IRC library written in go,
   designed to be as simple as possible. It aims to stick to the stdlib whenever

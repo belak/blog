@@ -1,9 +1,8 @@
 ---
 title: "Early Impressions of Rust from a Go Programmer"
-date: 2020-02-26T03:30:00-07:00
+date: 2020-02-27T02:50:00-07:00
 tags: ["go", "rust"]
 hide_updated: true
-draft: true
 ---
 
 F$&k the borrow checker, or "How I learned to stop worrying and love the compiler".
