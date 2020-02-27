@@ -107,7 +107,7 @@ Just use ZSH! If you have any problems, feel free to [file an issue](https://git
 
 ## Discussion
 
-Want to talk more about this? There are discussion threads at the following places:
+Want to talk more about this? There are discussion threads at the following locations:
 
 - [lobste.rs](https://lobste.rs/s/6hlx5f/intro_zsh_utils)
 - [Hacker News](https://news.ycombinator.com/item?id=19371463)
