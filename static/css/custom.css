@@ -1,0 +1,80 @@
+body {
+  background-color: var(--background);
+
+  max-width: 100ch;
+  margin: auto;
+  padding: 0;
+}
+
+/* Sticky footer */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Footer styles */
+
+footer {
+  margin: 1em 0 1em 0;
+  text-align: center;
+}
+
+/* Pagination styles */
+
+.pagination {
+  text-align: center;
+}
+.pagination,
+.post-navigation {
+  line-height: 2em;
+}
+
+/*
+ * Because of how floats work, we need to make sure there's content in the
+ * same element as a floated div to make sure we get the margins we expect.
+ */
+.pagination:after,
+.post-navigation:after {
+  content: ".";
+  visibility: hidden;
+}
+
+/* Tag styles */
+
+td.tags {
+  text-align: right;
+}
+
+.tags a {
+  color: var(--text-med);
+}
+
+/* Nav styles */
+
+nav a.active {
+  background-color: var(--text-lighter);
+  color: var(--text);
+}
+
+/* Dark mode helpers - hide the toggle by default */
+#dark-mode-toggle {
+  display: none;
+}
+
+/* Responsive design */
+
+@media (max-width: 105ch) {
+  #article {
+    /* Provide some space between the edge and the content for small screens */
+    margin: 0 1em;
+
+    /* Avoid jumpy resizes */
+    transition: margin 0.2s linear;
+  }
+}

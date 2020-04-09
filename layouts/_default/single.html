@@ -3,20 +3,18 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "post-nav" . }}
+  <!--{{ partial "post-nav" . }}-->
 
-  <article>
-    <article-header>
+  <div id="article">
+    <div>
       <h1>{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</h1>
 
-      <ul class="meta-list">
+      <ul class="reset">
         {{ if gt .Date 0 }}
         <li><b>Date:</b> <span class="subtitle">{{ .Date.Format "2006-01-02 03:04 PM" }}</span></li>
         {{ end }}
-        {{ if not .Params.hide_updated }}
-          {{ if ne .Date .Lastmod }}
-            <li><b>Updated:</b> <span class="subtitle">{{ .Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
-          {{ end }}
+        {{ if (and (not .Params.hide_updated) (ne .Date .Lastmod))}}
+          <li><b>Updated:</b> <span class="subtitle">{{ .Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
         {{ end }}
         {{ if .Params.tags }}
         <li class="tags">
@@ -27,7 +25,7 @@
         </li>
         {{ end }}
       </ul>
-    </article-header>
+    </div>
 
     <div>
       {{ .Content }}
