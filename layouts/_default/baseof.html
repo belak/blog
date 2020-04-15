@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{ .Site.GoogleAnalytics }}');
-  </script>
-
   <link rel="canonical" href="{{ .Permalink }}">
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -90,6 +80,10 @@
     </div>
   </footer>
   <!--<script src="https://dohliam.github.io/dropin-minimal-css/switcher.js"></script>-->
+
+  <!-- Self-hosted goatcounter instance -->
+  <script data-goatcounter="https://goat.coded.io/count"
+    async src="https://goat.coded.io/count.js"></script>
 </body>
 </html>
 
