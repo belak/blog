@@ -1,7 +1,8 @@
 body {
   background-color: var(--background);
+  color: var(--text);
 
-  max-width: 100ch;
+  max-width: 85ch;
   margin: auto;
   padding: 0;
 }
