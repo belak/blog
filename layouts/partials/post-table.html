@@ -1,0 +1,14 @@
+<table class="post-table">
+  {{ range where .Pages "Section" "ne" "" }}
+  <tr>
+    <td>
+      <div class="date" title="{{ .Date.Format "2006-01-02T15:04" }}">
+        {{ .Date.Format "2006-01-02" }}
+      </div>
+    </td>
+    <td>
+      <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+    </td>
+  </tr>
+  {{ end }}
+</table>

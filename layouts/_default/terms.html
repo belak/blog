@@ -1,7 +1,9 @@
 {{ define "main" }}
   <h1>Tags</h1>
 
-  {{ range .Data.Terms.Alphabetical }}
-    <h2><a href="/tags/{{ .Name | urlize }}/">#{{ .Name }}</a> ({{ .Count }})</h2>
-  {{ end }}
+  <ul class="tags data-list">
+    {{ range .Data.Terms.Alphabetical }}
+      <li><a href="/tags/{{ .Name | urlize }}/">#{{ .Name }}</a> ({{ .Count }})</h2></li>
+    {{ end }}
+  </ul>
 {{ end }}

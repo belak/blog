@@ -5,11 +5,11 @@
 {{ define "main" }}
   <!--{{ partial "post-nav" . }}-->
 
-  <div id="article">
+  <article>
     <div>
       <h1>{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</h1>
 
-      <ul class="reset">
+      <ul class="data-list">
         {{ if gt .Date 0 }}
         <li><b>Date:</b> <span class="subtitle">{{ .Date.Format "2006-01-02 03:04 PM" }}</span></li>
         {{ end }}

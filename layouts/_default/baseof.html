@@ -16,13 +16,10 @@
     {{ end }}
   </title>
 
-  <!-- Color schemes -->
+  <!-- Color schemes, defined as CSS variables -->
   <link rel="stylesheet" href="/css/colors.css">
 
-  <!-- A custom tweaked version of stylize,css -->
-  <link rel="stylesheet" href="/css/stylize.css">
-
-  <!-- Any overrides that didn't fit in stylize.css -->
+  <!-- Custom stylesheet -->
   <link rel="stylesheet" href="/css/custom.css">
 
   <!-- Syntax highlighting definition -->
@@ -33,7 +30,7 @@
 <body>
   <header>
     <nav>
-      <a href="/">
+      <a class="home-link" href="/">
         <svg viewBox="0 0 300 300" width="14" height="14" fill="currentcolor">
           <g>
             <path d="M282.466,205.54c-11.915-53.083-36.88-80.594-50.858-92.363c-0.751-1.124-1.523-2.229-2.31-3.321
@@ -57,11 +54,12 @@
         {{ .Site.Title }}
       </a>
 
-      <div class="right">
+      <div class="links">
         {{ $currentNode := . }}
-        {{ range .Site.Menus.main }}
+        {{ range $index, $link := .Site.Menus.main }}
+          {{ if $index }}|{{ end }}
           {{/* Seriously this is like lisp - I don't know how to make this better */}}
-          <a class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (and (ne $currentNode.Section "") (eq $currentNode.Section .Identifier)) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+          <a class="{{if or ($currentNode.IsMenuCurrent "main" $link) ($currentNode.HasMenuCurrent "main" $link) (and (ne $currentNode.Section "") (eq $currentNode.Section $link.Identifier)) }}active{{end}}" href="{{ $link.URL }}">{{ $link.Name }}</a>
         {{ end }}
       </div>
     </nav>
@@ -74,12 +72,12 @@
   <footer>
     <p id="dark-mode-toggle">
       <a href="#" onclick="event.preventDefault(); toggleDarkMode()">Toggle Dark Mode</a>
+      <a id="clear-dark-mode" href="#" onclick="event.preventDefault(); clearDarkMode()">(Reset)</a>
     </p>
     <div class="copyright">
-      Copyright &copy; 2019 <a href="/">Kaleb Elwert</a>
+      Copyright &copy; {{ dateFormat "2006" now }} <a href="/">Kaleb Elwert</a>
     </div>
   </footer>
-  <!--<script src="https://dohliam.github.io/dropin-minimal-css/switcher.js"></script>-->
 
   <!-- Self-hosted goatcounter instance -->
   <script data-goatcounter="https://goat.coded.io/count"

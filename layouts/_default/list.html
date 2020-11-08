@@ -1,7 +1,6 @@
 {{ define "main" }}
-  {{ range where .Paginator.Pages "Section" "ne" "" }}
-    {{ partial "article-preview" . }}
-  {{ end }}
+  <h2>All Posts</h2>
 
+  {{ partial "post-table" .Paginator }}
   {{ partial "paginator" .Paginator }}
 {{ end }}

@@ -1,9 +1,7 @@
 {{ define "main" }}
-  <h1>Tagged Posts: {{ .Title }}</h1>
+  <h2>Tagged Posts: {{ .Title }}</h2>
 
-  {{ range where .Paginator.Pages "Section" "ne" "" }}
-    {{ partial "article-preview" . }}
-  {{ end }}
+  {{ partial "post-table" .Paginator }}
 
   {{ partial "paginator" .Paginator }}
 {{ end }}

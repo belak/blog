@@ -10,13 +10,18 @@ pygmentsUseClasses = true
 
 [menu]
   [[menu.main]]
-    name = "Posts"
+    name = "Main"
     weight = 1
+    identifier = "index"
+    url = "/"
+  [[menu.main]]
+    name = "Archive"
+    weight = 2
     identifier = "posts"
     url = "/posts/"
   [[menu.main]]
     name = "Tags"
-    weight = 2
+    weight = 3
     identifier = "tags"
     url = "/tags/"
 
