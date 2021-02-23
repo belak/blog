@@ -13,7 +13,28 @@ ZSH is an extremely powerful tool which can be very useful but hard to configure
 
 If you've ever started zsh without a config file before, you've probably seen the following mass of text before:
 
-![screenshot of zsh-newuser-install](./1-zsh-newuser-install.png)
+```
+Please pick one of the following options:
+
+(1)  Configure settings for history, i.e. command lines remembered
+     and saved by the shell.  (Recommended.)
+
+(2)  Configure the new completion system.  (Recommended.)
+
+(3)  Configure how keys behave when editing command lines.  (Recommended.)
+
+(4)  Pick some of the more common shell options.  These are simple "on"
+     or "off" switches controlling the shell's features.
+
+(0)  Exit, leaving the existing ~/.zshrc alone.
+
+(a)  Abort all settings and start from scratch.  Note this will overwrite
+     any settings from zsh-newuser-install already in the startup file.
+     It will not alter any of your other settings, however.
+
+(q)  Quit and do nothing else.
+--- Type one of the keys in parentheses ---
+```
 
 Even after using ZSH for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's different on each of your computers, leading to tons of frustration.
 
