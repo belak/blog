@@ -2,16 +2,18 @@
 title: "Early Impressions of Rust from a Go Programmer"
 date: 2020-02-27T02:50:00-07:00
 tags: ["go", "rust"]
-hide_updated: true
 ---
 
 F$&k the borrow checker, or "How I learned to stop worrying and love the compiler".
 
-<!--more-->
+Even though most of my day-to-day work is in Python, I still consider myself a Go programmer. I co-wrote the SSH server powering Bitbucket.org in Go and maintain a number of nontrivial projects, such as an easy to use SSH git server called gitdir, an IRC library in go, and a chat framework called seabird.
 
-Even though most of my day-to-day work is in Python, I still consider myself a Go programmer. I co-wrote the SSH server powering Bitbucket.org in Go and maintain a number of nontrivial projects, such as an [easy to use SSH git server](https://github.com/belak/gitdir), an [IRC library](https://github.com/go-irc/irc), and an [IRC bot](https://github.com/belak/go-seabird).
+After reading Early Impressions of Go From a Rust Programmer, I started thinking about my experiences and how it's been for me learning in the other direction and wanted to see what a similar article would look like.
 
-After reading [Early Impressions of Go From a Rust Programmer](https://pingcap.com/blog/early-impressions-of-go-from-a-rust-programmer/), I started thinking about my experiences and how it's been for me learning in the other direction and wanted to see what a similar article would look like.
+=> https://github.com/belak/gitdir gitdir
+=> https://github.com/go-irc/irc go-irc
+=> https://github.com/seabird-chat seabird
+=> https://pingcap.com/blog/early-impressions-of-go-from-a-rust-programmer/ Early Impressions of Go From a Rust Programmer
 
 ## Why Rust?
 
@@ -65,7 +67,7 @@ Even though both languages could be thought of as replacements for C on a range 
 
 Want to talk more about this? There are discussion threads at the following locations:
 
-- [lobste.rs](https://lobste.rs/s/gu3s9u/early_impressions_rust_from_go)
-- [Hacker News](https://news.ycombinator.com/item?id=22438880)
+=> https://lobste.rs/s/gu3s9u/early_impressions_rust_from_go lobste.rs
+=> https://news.ycombinator.com/item?id=22438880 Hacker News
 
 Thanks for reading!

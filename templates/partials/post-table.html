@@ -1,5 +1,5 @@
 <table class="post-table">
-  {{ range where .Pages "Section" "ne" "" }}
+  {{ range . }}
   <tr>
     <td>
       <div class="date" title="{{ .Date.Format "2006-01-02T15:04" }}">

@@ -2,12 +2,11 @@
 title: "An Intro to zsh-utils"
 date: 2019-03-12T11:15:00-07:00
 tags: ["zsh", "dotfiles", "zsh-utils"]
-hide_updated: true
 ---
 
-ZSH is an extremely powerful tool which can be very useful but hard to configure. [zsh-utils](https://github.com/belak/zsh-utils) aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
+ZSH is an extremely powerful tool which can be very useful but hard to configure. zsh-utils aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
 
-<!--more-->
+=> https://github.com/belak/zsh-utils zsh-utils homepage
 
 ## Why Use a Config Framework?
 
@@ -42,7 +41,7 @@ That's where I see the main advantages of a config framework: providing a much b
 
 ## What Is This?
 
-Taken from the project README, [zsh-utils](https://github.com/belak/zsh-utils) is "a minimal set of ZSH plugins designed to be low-friction and low-complexity."
+Taken from the project README, zsh-utils is "a minimal set of ZSH plugins designed to be low-friction and low-complexity."
 
 After getting frustrated with the maintenance of prezto and oh-my-zsh, I decided to write my own small config framework, in a similar vein to some of the starter kits.
 
@@ -50,13 +49,13 @@ After getting frustrated with the maintenance of prezto and oh-my-zsh, I decided
 
 There were a number of main problems I noticed during my time maintaining prezto:
 
-- Most ZSH config frameworks contain a bundled plugin manager along with a number of modules. It would make more sense to officially support an external plugin manager and focus development on the plugins.
-- It takes a ton of work to get a module ready for prezto, even if it's small.
-- A number of large frameworks set up very strange defaults.
-- Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
-- Some plugin managers build very non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
-- They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
-- So many modules have way too many options, often because they're trying to do too many things.
+* Most ZSH config frameworks contain a bundled plugin manager along with a number of modules. It would make more sense to officially support an external plugin manager and focus development on the plugins.
+* It takes a ton of work to get a module ready for prezto, even if it's small.
+* A number of large frameworks set up very strange defaults.
+* Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
+* Some plugin managers build very non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
+* They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
+* So many modules have way too many options, often because they're trying to do too many things.
 
 That being said, there are a number of strengths to large configuration frameworks as well.
 
@@ -69,18 +68,18 @@ These are not really something I’m looking for. I want to use a shell as a she
 
 This project aims to solve some of the problems faced by larger frameworks by focusing on the following clear goals:
 
-- Loadable by any compatible plugin manager
-- Plugins will be kept small, relatively inflexible, well documented, and well organized
-- No external dependencies without very good reason
-- Focus on improving the existing experience rather than expanding it
+* Loadable by any compatible plugin manager
+* Plugins will be kept small, relatively inflexible, well documented, and well organized
+* No external dependencies without very good reason
+* Focus on improving the existing experience rather than expanding it
 
 Each plugin has a very focused purpose:
 
-- `completion` configures and loads basic tab completion (imagine bash tab completion on steroids). It's also recommended to use an additional set of [zsh-completions](https://github.com/zsh-users/zsh-completions) because this plugin only sets up the completion system and doesn't provide completions for common utils.
-- `editor` sets up some keybinds to fix some rough edges. It adds a few missing default key-binds such as Home/End and aims to add a few Vim features to the vi keybind set.
-- `history` configures and loads the shell history systems.
-- `prompt` runs initializes the built-in zsh theming system and provides a place for maintainers to put the prompt they use.
-- `utility` makes it easier to switch between operating systems by adding aliases for common operations so you don't need to remember different commands across platforms.
+* `completion` configures and loads basic tab completion (imagine bash tab completion on steroids). It's also recommended to use an additional set of [zsh-completions](https://github.com/zsh-users/zsh-completions) because this plugin only sets up the completion system and doesn't provide completions for common utils.
+* `editor` sets up some keybinds to fix some rough edges. It adds a few missing default key-binds such as Home/End and aims to add a few Vim features to the vi keybind set.
+* `history` configures and loads the shell history systems.
+* `prompt` runs initializes the built-in zsh theming system and provides a place for maintainers to put the prompt they use.
+* `utility` makes it easier to switch between operating systems by adding aliases for common operations so you don't need to remember different commands across platforms.
 
 That's it! There are no plugins for programming languages. There are no custom formats. And there is no configuration outside loading the plugins and optionally overriding ZSH settings.
 
@@ -88,11 +87,11 @@ That's it! There are no plugins for programming languages. There are no custom f
 
 If this is something that sounds useful to you, it's fairly easy to get started.
 
-Simply replace your `.zshrc` with the following snippet. This is [copied directly from the setup](https://github.com/belak/zsh-utils/#recommended-installation) in the zsh-utils README.
+Simply replace your `.zshrc` with the following snippet. This is copied directly from the setup in the zsh-utils README.
 
-It downloads [antigen](https://github.com/zsh-users/antigen.git), a simple plugin manager, straight from the source if it doesn't exist and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
+It downloads antigen, a simple plugin manager, straight from the source if it doesn't exist and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
 
-```sh
+``` .zshrc
 [[ ! -d "$HOME/.antigen" ]] && git clone https://github.com/zsh-users/antigen.git "$HOME/.antigen"
 source "$HOME/.antigen/antigen.zsh"
 
@@ -120,17 +119,20 @@ prompt belak
 bindkey -e
 ```
 
-Alternatively, [my dotfiles](https://github.com/belak/dotfiles/blob/master/zshrc) are a good resource and starting point.
+=> https://github.com/belak/zsh-utils/#recommended-installation Recommended zsh-utils setup
+=> https://github.com/belak/dotfiles/blob/master/zshrc My dotfiles
 
 ## Now What?
 
-Just use ZSH! If you have any problems, feel free to [file an issue](https://github.com/belak/zsh-utils/issues/new) or open a pull request if you're feeling up for it.
+Just use ZSH! If you have any problems, feel free to file an issue or open a pull request if you're feeling up for it.
+
+=> https://github.com/belak/zsh-utils/issues/new File an issue
 
 ## Discussion
 
 Want to talk more about this? There are discussion threads at the following locations:
 
-- [lobste.rs](https://lobste.rs/s/6hlx5f/intro_zsh_utils)
-- [Hacker News](https://news.ycombinator.com/item?id=19371463)
+=> https://lobste.rs/s/6hlx5f/intro_zsh_utils lobste.rs
+=> https://news.ycombinator.com/item?id=19371463 Hacker News
 
 Thanks for reading!

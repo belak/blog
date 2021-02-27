@@ -1,0 +1,19 @@
+{{ template "base" . }}
+
+{{ define "full-title" }}
+  {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+  <h2>Latest Posts</h2>
+  {{ template "post-table" .Page.Posts }}
+
+  <hr />
+
+  <h2>Tags</h2>
+  <ul class="tags data-list">
+    {{ range .Site.Tags }}
+    <li><a href="{{ .URL }}">#{{ .Name }}</a> ({{ .Count }})</li>
+    {{ end }}
+  </ul>
+{{ end }}

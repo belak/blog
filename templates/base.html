@@ -6,23 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="canonical" href="{{ .Permalink }}">
-  {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  {{ range .Site.Feeds }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .URL }}" title="{{ $.Site.Title }}" />
+  {{ end }}
 
   <title>
-    {{ block "title" . }}
-      {{ .Site.Title }}
-    {{ end }}
+    {{ block "full-title" . }}{{ template "title" . }} &ndash; {{ .Site.Title }}{{ end }}
   </title>
 
-  <!-- Color schemes, defined as CSS variables -->
-  <link rel="stylesheet" href="/css/colors.css">
-
-  <!-- Custom stylesheet -->
-  <link rel="stylesheet" href="/css/custom.css">
-
-  <!-- Syntax highlighting definition -->
+  <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/chroma.css">
 
   <script async src="/js/dark-mode.js"></script>
@@ -56,17 +48,16 @@
 
       <div class="links">
         {{ $currentNode := . }}
-        {{ range $index, $link := .Site.Menus.main }}
+        {{ range $index, $link := .Site.Menus }}
           {{ if $index }}|{{ end }}
-          {{/* Seriously this is like lisp - I don't know how to make this better */}}
-          <a class="{{if or ($currentNode.IsMenuCurrent "main" $link) ($currentNode.HasMenuCurrent "main" $link) (and (ne $currentNode.Section "") (eq $currentNode.Section $link.Identifier)) }}active{{end}}" href="{{ $link.URL }}">{{ $link.Name }}</a>
+          <a class="{{ if eq $currentNode.Section $link.Section }}active{{ end }}" href="{{ $link.URL }}">{{ $link.Name }}</a>
         {{ end }}
       </div>
     </nav>
   </header>
 
   <main>
-    {{ block "main" . }}{{ end }}
+    {{ template "main" . }}
   </main>
 
   <footer>
@@ -84,4 +75,3 @@
     async src="https://goat.coded.io/count.js"></script>
 </body>
 </html>
-

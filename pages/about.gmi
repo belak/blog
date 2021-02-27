@@ -1,0 +1,55 @@
+---
+title: "About"
+description: ""
+toc: true
+show_updated: true
+---
+
+## Intro
+
+My name is Kaleb Elwert and I'm a full-time software developer focusing on backend and infrastructure code. I currently work at Datadog on the internal API platform. Previously, I worked for The Pokémon Company International and Atlassian.
+
+Thanks for stopping by my site. Feel free to check out my ramblings in this blog or take a look at some of my other projects below to see what I've been up to lately.
+
+Opinions expressed are solely my own and do not express the views or opinions of my employer.
+
+## Other Projects
+
+=> https://github.com/seabird-chat seabird-chat
+
+Seabird started as an IRC bot but has now morphed into a mini chat network allowing communication between IRC, Discord, and Minecraft as well as adding functionality via plugins, even allowing other people to write their own. The core API is written using gRPC and has been used as a test-bed for ideas and a place to play around with new technologies.
+
+=> https://github.com/go-irc/irc go-irc
+
+Go-IRC is an IRC library written in go, meant to be as simple as possible. It aims to stick to the stdlib whenever possible and make it easy to read and write IRC connections as streams. The API design is also based on the stdlib and is a mixture of the Reader/Writer rom encoding/json and how requests are handled from net/http.
+
+=> https://github.com/belak/gitdir gitdir
+
+An ssh server for serving git repos designed to provide a simple way to store repos in a secure fashion.
+
+=> https://github.com/belak/base16-emacs base16-emacs
+=> https://github.com/belak/base16-builder-go base16-builder-go
+
+A collection of themes which use Chris Kempson's base16 concept to provide a large number of themes with a small amount of code. I also maintain one of the builder reference implementations and help maintain the main repos.
+
+=> https://github.com/belak/zsh-utils zsh-utils
+A small collection of focused zsh plugins aimed at making the default experience better. This is what I personally use in my dotfiles.
+
+=> https://github.com/sorin-ionescu/prezto prezto
+
+A ZSH configuration framework designed to provide a number of convenient modules with sane defaults, aliases and more. I am one of the maintainers and have been focusing on fixing and cleaning up old issues and pull requests.
+
+## Made With
+
+This site is served over both HTTP and Gemini. There are some additional resources used when accessed over HTTP.
+
+=> https://www.flaticon.com/authors/freepik Penguin icon by Freepik
+
+## Contact Me
+
+If you'd like to reach me, you can email me or you can try one of the other
+sites listed below:
+
+=> https://github.com/belak Github
+=> https://www.linkedin.com/in/kelwert LinkedIn
+=> mailto:belak@coded.io Email
