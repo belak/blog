@@ -5,22 +5,21 @@
 {{ end }}
 
 {{ define "main" }}
-{{ with .Page }}
   <article>
     <div>
-      <h1>{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</h1>
+      <h1>{{ .Meta.Title }}{{ if .Meta.Draft }} :: DRAFT{{end}}</h1>
 
       <ul class="data-list">
-        {{ if gt .Date 0 }}
-        <li><b>Date:</b> <span class="subtitle">{{ .Date.Format "2006-01-02 03:04 PM" }}</span></li>
+        {{ if gt .Meta.Date 0 }}
+        <li><b>Date:</b> <span class="subtitle">{{ .Meta.Date.Format "2006-01-02 03:04 PM" }}</span></li>
         {{ end }}
-        {{ if (and .ShowUpdated (ne .Date .Lastmod))}}
-          <li><b>Updated:</b> <span class="subtitle">{{ .Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
+        {{ if (and .Meta.ShowUpdated (ne .Meta.Date .Meta.Lastmod))}}
+          <li><b>Updated:</b> <span class="subtitle">{{ .Meta.Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
         {{ end }}
-        {{ if .Params.tags }}
+        {{ if .Meta.Params.tags }}
         <li class="tags">
           <b>Tags:</b>
-          {{ range sort .Tags }}
+          {{ range .Meta.Tags }}
             <a href="/tags/{{ . }}">#{{ . }}</a>
           {{ end }}
         </li>
@@ -32,5 +31,4 @@
       {{ .HtmlContent }}
     </div>
   </article>
-{{ end }}
 {{ end }}

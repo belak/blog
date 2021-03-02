@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="canonical" href="{{ .Permalink }}">
-  {{ range .Site.Feeds }}
-  <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .URL }}" title="{{ $.Site.Title }}" />
+  {{ range .Feeds }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .URL }}" title="{{ .Title }}" />
   {{ end }}
 
   <title>
-    {{ block "full-title" . }}{{ template "title" . }} &ndash; {{ .Site.Title }}{{ end }}
+    {{ block "full-title" . }}{{ block "title" . }}{{ .Site.Title }}{{ end }} &ndash; {{ .Site.Title }}{{ end }}
   </title>
 
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/chroma.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+  <link rel="stylesheet" href="/static/css/chroma.css">
 
-  <script async src="/js/dark-mode.js"></script>
+  <script async src="/static/js/dark-mode.js"></script>
 </head>
 <body>
   <header>
@@ -57,7 +57,7 @@
   </header>
 
   <main>
-    {{ template "main" . }}
+    {{ template "main" .Page }}
   </main>
 
   <footer>
@@ -66,7 +66,7 @@
       <a id="clear-dark-mode" href="#" onclick="event.preventDefault(); clearDarkMode()">(Reset)</a>
     </p>
     <div class="copyright">
-      Copyright &copy; {{ dateFormat "2006" now }} <a href="/">Kaleb Elwert</a>
+      Copyright &copy; 2020 <a href="/">Kaleb Elwert</a>
     </div>
   </footer>
 

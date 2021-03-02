@@ -1,5 +1,9 @@
-{{ template "base" . }}
+{{ template "base.html" . }}
 
 {{ define "main" }}
   <h1>404</h1>
+
+  <p>{{ .Path }}</p>
+
+  <p>Page not found.</p>
 {{ end }}

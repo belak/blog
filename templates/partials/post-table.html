@@ -2,12 +2,12 @@
   {{ range . }}
   <tr>
     <td>
-      <div class="date" title="{{ .Date.Format "2006-01-02T15:04" }}">
-        {{ .Date.Format "2006-01-02" }}
+      <div class="date" title="{{ .Meta.Date.Format "2006-01-02T15:04" }}">
+        {{ .Meta.Date.Format "2006-01-02" }}
       </div>
     </td>
     <td>
-      <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+      <a href="{{ .Permalink }}">{{ .Meta.Title }}{{ if .Meta.Draft }} :: DRAFT{{end}}</a>
     </td>
   </tr>
   {{ end }}
