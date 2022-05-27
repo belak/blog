@@ -31,7 +31,7 @@ my employer.
   go, meant to be as simple as possible. It aims to stick to the stdlib whenever
   possible and make it easy to read and write IRC connections as streams. The
   API design is also based on the stdlib and is a mixture of the Reader/Writer
-  rom encoding/json and how requests are handled from net/http.
+  from encoding/json and how requests are handled from net/http.
 - [gitdir](https://github.com/belak/gitdir) - An ssh server for serving
   git repos designed to provide a simple way to store repos in a secure fashion.
 - [base16-emacs](https://github.com/belak/base16-emacs) - A collection of
@@ -42,7 +42,7 @@ my employer.
   focused zsh plugins aimed at making the default experience better. This is
   what I personally use in my dotfiles.
 - [prezto](https://github.com/sorin-ionescu/prezto) - A ZSH configuration
-  framework designed to provide a number of convenient modules with sane
+  framework designed to provide a number of convenient modules with sensible
   defaults, aliases and more. I am one of the maintainers and have been focusing
   on fixing and cleaning up old issues and pull requests.
 

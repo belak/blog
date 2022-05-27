@@ -5,7 +5,7 @@ tags: ["zsh", "dotfiles", "zsh-utils"]
 hide_updated: true
 ---
 
-ZSH is an extremely powerful tool which can be very useful but hard to configure. [zsh-utils](https://github.com/belak/zsh-utils) aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to dive deeper later.
+ZSH is an extremely powerful tool which can be extremely useful but hard to configure. [zsh-utils](https://github.com/belak/zsh-utils) aims to fix this. It's a small configuration framework which aims to provide a base to work off of without getting in your way if you want to go deeper later.
 
 <!--more-->
 
@@ -36,7 +36,7 @@ Please pick one of the following options:
 --- Type one of the keys in parentheses ---
 ```
 
-Even after using ZSH for multiple years, if I see this, it's very rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's different on each of your computers, leading to tons of frustration.
+Even after using ZSH for multiple years, if I see this, it's rare that I take the time to go through this process every time: it's daunting and almost every time you'll end up with a config file that's different on each of your computers, leading to tons of frustration.
 
 That's where I see the main advantages of a config framework: providing a much better out of the box ZSH experience and providing a base to build a personal config off of.
 
@@ -52,9 +52,9 @@ There were a number of main problems I noticed during my time maintaining prezto
 
 - Most ZSH config frameworks contain a bundled plugin manager along with a number of modules. It would make more sense to officially support an external plugin manager and focus development on the plugins.
 - It takes a ton of work to get a module ready for prezto, even if it's small.
-- A number of large frameworks set up very strange defaults.
+- A number of large frameworks set up strange defaults.
 - Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
-- Some plugin managers build very non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
+- Some plugin managers build non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
 - They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
 - So many modules have way too many options, often because they're trying to do too many things.
 
@@ -71,10 +71,10 @@ This project aims to solve some of the problems faced by larger frameworks by fo
 
 - Loadable by any compatible plugin manager
 - Plugins will be kept small, relatively inflexible, well documented, and well organized
-- No external dependencies without very good reason
+- No external dependencies without good reason
 - Focus on improving the existing experience rather than expanding it
 
-Each plugin has a very focused purpose:
+Each plugin has a focused purpose:
 
 - `completion` configures and loads basic tab completion (imagine bash tab completion on steroids). It's also recommended to use an additional set of [zsh-completions](https://github.com/zsh-users/zsh-completions) because this plugin only sets up the completion system and doesn't provide completions for common utils.
 - `editor` sets up some keybinds to fix some rough edges. It adds a few missing default key-binds such as Home/End and aims to add a few Vim features to the vi keybind set.
@@ -90,7 +90,7 @@ If this is something that sounds useful to you, it's fairly easy to get started.
 
 Simply replace your `.zshrc` with the following snippet. This is [copied directly from the setup](https://github.com/belak/zsh-utils/#recommended-installation) in the zsh-utils README.
 
-It downloads [antigen](https://github.com/zsh-users/antigen.git), a simple plugin manager, straight from the source if it doesn't exist and loads all the zsh-utils plugins along with a few other very commonly used external plugins.
+It downloads [antigen](https://github.com/zsh-users/antigen.git), a simple plugin manager, straight from the source if it doesn't exist and loads all the zsh-utils plugins along with a few other commonly used external plugins.
 
 ```sh
 [[ ! -d "$HOME/.antigen" ]] && git clone https://github.com/zsh-users/antigen.git "$HOME/.antigen"
