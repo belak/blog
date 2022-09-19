@@ -2,3 +2,4 @@ public
 resources
 .DS_Store
 styles
+.hugo_build.lock
