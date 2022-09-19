@@ -2,7 +2,7 @@
 FROM alpine:latest as builder
 MAINTAINER Kaleb Elwert <belak@coded.io>
 
-ENV HUGO_VERSION 0.58.3
+ENV HUGO_VERSION 0.68.3
 ENV HUGO_ARCHIVE hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 RUN mkdir /site && mkdir /site-build
