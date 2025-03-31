@@ -1,14 +1,10 @@
-<table class="post-table">
+<ul class="data-list">
   {{ range where .Pages "Section" "ne" "" }}
-  <tr>
-    <td>
-      <div class="date" title="{{ .Date.Format "2006-01-02T15:04" }}">
-        {{ .Date.Format "2006-01-02" }}
-      </div>
-    </td>
-    <td>
-      <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
-    </td>
-  </tr>
+  <li>
+    <span class="date" title="{{ .Date.Format "2006-01-02T15:04" }}">
+      {{ .Date.Format "2006-01-02" }}
+    </span>
+    <a href="{{ .Permalink }}">{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</a>
+  </li>
   {{ end }}
-</table>
+</ul>

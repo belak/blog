@@ -1,0 +1,28 @@
+/* Sticky footer */
+
+body {
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.date {
+    color: var(--text-light);
+}
+
+ul.data-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+code, pre, pre span {
+    color: var(--preformatted);
+}
+
+:root {
+    /* default fonts, based on Github's curated list of system fonts. This lets us
+   * look good without requiring external fonts to be loaded.
+   */
+    --mono-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    --sans-font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+                    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}

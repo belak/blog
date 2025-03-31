@@ -8,13 +8,9 @@ menu: "main"
 ## Intro
 
 My name is Kaleb Elwert and I'm a full-time software developer focusing on
-backend and infrastructure code. I currently work at Datadog on the internal API
-platform. Previously, I worked for The Pokémon Company International and
-Atlassian.
-
-Thanks for stopping by my site. Feel free to check out my ramblings in this blog
-or take a look at some of my other projects below to see what I've been up to
-lately.
+backend and infrastructure code. I currently work at Datadog on the Runtime
+Configuration team. Previously, I worked for The Pokémon Company International
+and Atlassian.
 
 Opinions expressed are solely my own and do not express the views or opinions of
 my employer.

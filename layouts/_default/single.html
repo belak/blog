@@ -1,34 +1,33 @@
-{{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}{{ if .Draft }} :: DRAFT{{end}}
-{{ end }}
-
 {{ define "main" }}
-  <!--{{ partial "post-nav" . }}-->
+<!--{{ partial "post-nav" . }}-->
 
-  <article>
-    <div>
-      <h1>{{ .Title }}{{ if .Draft }} :: DRAFT{{end}}</h1>
+  <div>
+    <ul class="data-list">
+      {{ if gt .Date 0 }}
+      <li><b>Date:</b> <span class="subtitle">{{ .Date.Format "2006-01-02 03:04 PM" }}</span></li>
+      {{ end }}
+      {{ if (and (not .Params.hide_updated) (ne .Date .Lastmod))}}
+      <li><b>Updated:</b> <span class="subtitle">{{ .Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
+      {{ end }}
+      {{ if .Params.tags }}
+      <li class="tags">
+        <b>Tags:</b>
+        {{ range sort .Params.tags }}
+        <a href="/tags/{{ . }}">#{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
 
-      <ul class="data-list">
-        {{ if gt .Date 0 }}
-        <li><b>Date:</b> <span class="subtitle">{{ .Date.Format "2006-01-02 03:04 PM" }}</span></li>
-        {{ end }}
-        {{ if (and (not .Params.hide_updated) (ne .Date .Lastmod))}}
-          <li><b>Updated:</b> <span class="subtitle">{{ .Lastmod.Format "2006-01-02 03:04 PM" }}</span></li>
-        {{ end }}
-        {{ if .Params.tags }}
-        <li class="tags">
-          <b>Tags:</b>
-          {{ range sort .Params.tags }}
-            <a href="/tags/{{ . }}">#{{ . }}</a>
-          {{ end }}
-        </li>
-        {{ end }}
-      </ul>
-    </div>
+  {{ if .Params.toc }}
+  <details>
+    <summary>Table of Contents</summary>
+    {{ .TableOfContents }}
+  </details>
+  {{ end }}
 
-    <div>
-      {{ .Content }}
-    </div>
-  </article>
+  <div>
+    {{ .Content }}
+  </div>
 {{ end }}
