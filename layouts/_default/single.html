@@ -1,6 +1,4 @@
 {{ define "main" }}
-<!--{{ partial "post-nav" . }}-->
-
   <div>
     <ul class="data-list">
       {{ if gt .Date 0 }}
@@ -12,8 +10,8 @@
       {{ if .Params.tags }}
       <li class="tags">
         <b>Tags:</b>
-        {{ range sort .Params.tags }}
-        <a href="/tags/{{ . }}">#{{ . }}</a>
+        {{ range .GetTerms "tags" }}
+        <a href="{{ .RelPermalink }}">#{{ .Data.Term }}</a>
         {{ end }}
       </li>
       {{ end }}
