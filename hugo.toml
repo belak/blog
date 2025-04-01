@@ -6,6 +6,8 @@ sectionPagesMenu = "main"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+timeZone = "America/Los_Angeles"
+
 [markup.goldmark.renderer]
 unsafe = true
 

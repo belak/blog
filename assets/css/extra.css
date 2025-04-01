@@ -26,7 +26,7 @@ body {
 
 /* Define a utility class to make dates lighter and monospace, mostly for lists */
 
-.date {
+time {
     color: var(--text-light);
     font-family: var(--mono-font);
 }
