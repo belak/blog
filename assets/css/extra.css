@@ -9,6 +9,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        /* Override the accent color from orange to blue in dark-mode. This matches my
+         * old site.
+         */
         --accent: #3498db;
         --accent-hover: #2980b9;
     }
@@ -21,15 +24,21 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+/* Define a utility class to make dates lighter and monospace, mostly for lists */
+
 .date {
     color: var(--text-light);
     font-family: var(--mono-font);
 }
 
+/* Define a utility class to make a list without decorations */
+
 ul.data-list {
     list-style-type: none;
     padding-left: 0;
 }
+
+/* Override a:hover to actually use the accent-hover color */
 
 a:hover {
     color: var(--accent-hover);
