@@ -44,8 +44,9 @@ my employer.
 
 ## Made With
 
-This site was built using [hugo](https://gohugo.io). Penguin icon made by
-[Freepik](https://www.flaticon.com/authors/freepik) from
+This site was built using [hugo](https://gohugo.io).
+[simple.css](https://github.com/kevquirk/simple.css) was used for basic styling.
+Penguin icon made by [Freepik](https://www.flaticon.com/authors/freepik) from
 [Flaticon](http://www.flaticon.com).
 
 ## Contact Me
