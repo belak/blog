@@ -1,3 +1,19 @@
+:root {
+    /* default fonts, based on Github's curated list of system fonts. This lets us
+     * look good without requiring external fonts to be loaded.
+     */
+    --mono-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    --sans-font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+                    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent: #3498db;
+        --accent-hover: #2980b9;
+    }
+}
+
 /* Sticky footer */
 
 body {
@@ -7,6 +23,7 @@ body {
 
 .date {
     color: var(--text-light);
+    font-family: var(--mono-font);
 }
 
 ul.data-list {
@@ -14,15 +31,11 @@ ul.data-list {
     padding-left: 0;
 }
 
-code, pre, pre span {
-    color: var(--preformatted);
+a:hover {
+    color: var(--accent-hover);
 }
 
-:root {
-    /* default fonts, based on Github's curated list of system fonts. This lets us
-   * look good without requiring external fonts to be loaded.
-   */
-    --mono-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    --sans-font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-                    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+/* Reset text color for code blocks */
+code, pre, pre span {
+    color: var(--preformatted);
 }
