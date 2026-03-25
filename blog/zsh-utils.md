@@ -53,7 +53,7 @@ There were a number of main problems I noticed during my time maintaining prezto
 - It takes a ton of work to get a module ready for prezto, even if it's small.
 - A number of large frameworks set up strange defaults.
 - Many plugins end up being nothing more than a small wrapper around an external repo. Most of this work could be handled by plugin managers.
-- Some plugin managers build non-standard ways to configure ZSH (prezto puts a *ton* of config values in zstyle and oh-my-zsh has their own custom theme format).
+- Some plugin managers build non-standard ways to configure ZSH (prezto puts a _ton_ of config values in zstyle and oh-my-zsh has their own custom theme format).
 - They just do too much. All I'm really looking for is a small wrapper around the built-in ZSH features.
 - So many modules have way too many options, often because they're trying to do too many things.
 

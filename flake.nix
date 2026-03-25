@@ -7,23 +7,15 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     inputs@{
       flake-parts,
-      treefmt-nix,
       nixpkgs,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        treefmt-nix.flakeModule
-      ];
 
       systems = [
         "aarch64-linux"
@@ -41,28 +33,47 @@
           ...
         }:
         {
-          treefmt = {
-            programs.nixfmt.enable = true;
+          formatter = pkgs.treefmt.withConfig {
+            runtimeInputs = with pkgs; [
+              nixfmt
+              gotools
+              config.packages.templ
+              prettier
+            ];
 
-            programs.goimports = {
-              enable = true;
-              excludes = [
-                "*.sql.go"
-                "*_templ.go"
-              ];
-            };
+            settings = {
+              formatter.nixfmt = {
+                command = "nixfmt";
+                includes = [ "*.nix" ];
+              };
 
-            programs.templ = {
-              enable = true;
-              package = config.packages.templ;
-            };
+              formatter.goimports = {
+                command = "goimports";
+                includes = [ "*.go" ];
+                excludes = [
+                  "*.sql.go"
+                  "*_templ.go"
+                ];
+              };
 
-            programs.prettier = {
-              enable = true;
-              includes = [
-                "*.css"
-                "*.md"
-              ];
+              formatter.templ = {
+                command = "templ";
+                options = [ "fmt" ];
+                includes = [ "*.templ" ];
+              };
+
+              formatter.prettier = {
+                command = "prettier";
+                options = [ "--write" ];
+                includes = [
+                  "*.css"
+                  "*.md"
+                ];
+                excludes = [
+                  "**/chroma.css"
+                  "**/simple-*.css"
+                ];
+              };
             };
           };
 

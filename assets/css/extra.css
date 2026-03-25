@@ -1,50 +1,53 @@
 :root {
-    /* default fonts, based on Github's curated list of system fonts. This lets us
+  /* default fonts, based on Github's curated list of system fonts. This lets us
      * look good without requiring external fonts to be loaded.
      */
-    --mono-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    --sans-font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-                    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --mono-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  --sans-font:
+    -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        /* Override the accent color from orange to blue in dark-mode. This matches my
+  :root {
+    /* Override the accent color from orange to blue in dark-mode. This matches my
          * old site.
          */
-        --accent: #3498db;
-        --accent-hover: #2980b9;
-    }
+    --accent: #3498db;
+    --accent-hover: #2980b9;
+  }
 }
 
 /* Sticky footer */
 
 body {
-    min-height: 100vh;
-    grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* Define a utility class to make dates lighter and monospace, mostly for lists */
 
 time {
-    color: var(--text-light);
-    font-family: var(--mono-font);
+  color: var(--text-light);
+  font-family: var(--mono-font);
 }
 
 /* Define a utility class to make a list without decorations */
 
 ul.data-list {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* Override a:hover to actually use the accent-hover color */
 
 a:hover {
-    color: var(--accent-hover);
+  color: var(--accent-hover);
 }
 
 /* Reset text color for code blocks */
-code, pre, pre span {
-    color: var(--preformatted);
+code,
+pre,
+pre span {
+  color: var(--preformatted);
 }
