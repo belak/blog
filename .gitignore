@@ -1,5 +1,5 @@
-public
-resources
 .DS_Store
-styles
-.hugo_build.lock
+
+# Build output
+/result
+/belak-blog

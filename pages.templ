@@ -1,0 +1,145 @@
+package blog
+
+import "fmt"
+
+templ indexPage(content string) {
+	@templ.Raw(content)
+}
+
+templ postList(posts []*Post, page, totalPages int) {
+	<ul class="data-list">
+		for _, p := range posts {
+			<li>
+				<time datetime={ p.Date.Format("2006-01-02T15:04-0700") }>
+					{ p.Date.Format("2006-01-02") }
+				</time>
+				<a href={ templ.SafeURL(p.Permalink()) }>{ p.Title }</a>
+			</li>
+		}
+	</ul>
+	if totalPages > 1 {
+		<div class="pagination">
+			if page > 1 {
+				<div class="pull-left">
+					<a href={ templ.SafeURL(fmt.Sprintf("/posts/?page=%d", page-1)) } class="chevron">&lsaquo;</a>
+					<a href={ templ.SafeURL(fmt.Sprintf("/posts/?page=%d", page-1)) }>Prev Page</a>
+				</div>
+			}
+			<div style="position: absolute; left: 0; right: 0">
+				Page { fmt.Sprint(page) } of { fmt.Sprint(totalPages) }
+			</div>
+			if page < totalPages {
+				<div class="pull-right">
+					<a href={ templ.SafeURL(fmt.Sprintf("/posts/?page=%d", page+1)) }>Next Page</a>
+					<a href={ templ.SafeURL(fmt.Sprintf("/posts/?page=%d", page+1)) } class="chevron">&rsaquo;</a>
+				</div>
+			}
+		</div>
+	}
+}
+
+templ postSingle(post *Post, prev, next *Post) {
+	<div>
+		<ul class="data-list">
+			if !post.Date.IsZero() {
+				<li>
+					<b>Posted:</b>
+					<time
+						datetime={ post.Date.Format("2006-01-02T15:04-0700") }
+						title={ post.Date.Format("2006-01-02 03:04 PM -07:00") }
+					>
+						{ post.Date.Format("2006-01-02") }
+					</time>
+				</li>
+			}
+			if !post.Updated.IsZero() {
+				<li>
+					<b>Updated:</b>
+					<time
+						datetime={ post.Updated.Format("2006-01-02T15:04-0700") }
+						title={ post.Updated.Format("2006-01-02 03:04 PM -07:00") }
+					>
+						{ post.Updated.Format("2006-01-02") }
+					</time>
+				</li>
+			}
+			if len(post.Tags) > 0 {
+				<li class="tags">
+					<b>Tags:</b>
+					for i, tag := range post.Tags {
+						if i > 0 {
+							{ " " }
+						}
+						<a href={ templ.SafeURL("/tags/" + tag + "/") }>#{ tag }</a>
+					}
+				</li>
+			}
+		</ul>
+	</div>
+	@templ.Raw(post.Content)
+	if prev != nil || next != nil {
+		<ul class="meta-list">
+			<li>
+				<b>Prev:</b>
+				if prev != nil {
+					<a href={ templ.SafeURL(prev.Permalink()) }>{ prev.Title }</a>
+				} else {
+					-
+				}
+			</li>
+			<li>
+				<b>Next:</b>
+				if next != nil {
+					<a href={ templ.SafeURL(next.Permalink()) }>{ next.Title }</a>
+				} else {
+					-
+				}
+			</li>
+		</ul>
+	}
+}
+
+templ pageView(page *Page) {
+	if !page.Updated.IsZero() {
+		<ul class="data-list">
+			<li>
+				<b>Updated:</b>
+				<time
+					datetime={ page.Updated.Format("2006-01-02T15:04-0700") }
+					title={ page.Updated.Format("2006-01-02 03:04 PM -07:00") }
+				>
+					{ page.Updated.Format("2006-01-02") }
+				</time>
+			</li>
+		</ul>
+	}
+	@templ.Raw(page.Content)
+}
+
+templ tagsPage(tags []TagInfo) {
+	<ul class="tags data-list">
+		for _, t := range tags {
+			<li>
+				<a href={ templ.SafeURL("/tags/" + t.Name + "/") }>#{ t.Name }</a>
+				({ fmt.Sprint(t.Count) })
+			</li>
+		}
+	</ul>
+}
+
+templ tagPostsPage(tag string, posts []*Post) {
+	<ul class="data-list">
+		for _, p := range posts {
+			<li>
+				<time datetime={ p.Date.Format("2006-01-02T15:04-0700") }>
+					{ p.Date.Format("2006-01-02") }
+				</time>
+				<a href={ templ.SafeURL(p.Permalink()) }>{ p.Title }</a>
+			</li>
+		}
+	</ul>
+}
+
+templ notFoundPage() {
+	<p>The page you're looking for doesn't exist.</p>
+}

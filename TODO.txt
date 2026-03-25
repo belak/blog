@@ -3,3 +3,6 @@ Update theme to pull these together:
 https://grh.am/
 https://martinheinz.dev/
 https://dacav.roundhousecode.com/pages/home.html
+
+Add ETag/If-None-Match and Last-Modified/If-Modified-Since support to the
+Atom feed endpoint for HTTP-level caching.

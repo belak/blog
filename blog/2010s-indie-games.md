@@ -2,7 +2,6 @@
 title: "My Favorite Indie Games of the 2010s"
 date: 2019-12-30T12:30:00-07:00
 tags: ["gaming"]
-hide_updated: true
 draft: true
 ---
 

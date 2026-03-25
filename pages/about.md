@@ -1,6 +1,7 @@
 ---
 title: "About"
 description: ""
+updated: 2025-04-01T07:21:00+00:00
 toc: true
 menu: "main"
 ---
@@ -44,7 +45,8 @@ my employer.
 
 ## Made With
 
-This site was built using [hugo](https://gohugo.io).
+This site is built with a custom Go server using [templ](https://templ.guide) and
+[goldmark](https://github.com/yuin/goldmark).
 [simple.css](https://github.com/kevquirk/simple.css) was used for basic styling.
 Penguin icon made by [Freepik](https://www.flaticon.com/authors/freepik) from
 [Flaticon](http://www.flaticon.com).
